@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Fraunces } from "next/font/google";
 import { SITE } from "@/lib/constants";
+import { OrganizationSchema, WebSiteSchema } from "@/components/SchemaOrg";
 import "./globals.css";
 
 const inter = Inter({
@@ -38,7 +39,11 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${fraunces.variable} h-full`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <OrganizationSchema />
+        <WebSiteSchema />
+        {children}
+      </body>
     </html>
   );
 }

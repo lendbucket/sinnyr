@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Section, { Eyebrow, SectionHeading } from "@/components/Section";
 import Button from "@/components/Button";
+import { BreadcrumbSchema } from "@/components/SchemaOrg";
 
 export const metadata: Metadata = {
   title: "The Path | Creator Onboarding Journey",
@@ -75,6 +76,12 @@ const STAGES = [
 export default function ThePathPage() {
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "The Path", href: "/the-path" },
+        ]}
+      />
       <Header />
 
       {/* Hero */}

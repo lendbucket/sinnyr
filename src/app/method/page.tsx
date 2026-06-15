@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Section, { Eyebrow, SectionHeading } from "@/components/Section";
 import Button from "@/components/Button";
+import { BreadcrumbSchema, ServiceSchema } from "@/components/SchemaOrg";
 import { METHOD_STEPS } from "@/data/method";
 
 export const metadata: Metadata = {
@@ -42,6 +43,16 @@ const GAP_FIX = [
 export default function MethodPage() {
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "The Sinnyr Method", href: "/method" },
+        ]}
+      />
+      <ServiceSchema
+        name="The Sinnyr Method - Creator Management System"
+        description="Six-component creator management system: Selection, Positioning, Content Engine, Distribution, Conversion, and Daily Signal analytics."
+      />
       <Header />
 
       {/* Hero */}

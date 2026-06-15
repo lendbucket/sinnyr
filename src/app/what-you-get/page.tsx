@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Section, { Eyebrow, SectionHeading } from "@/components/Section";
 import Button from "@/components/Button";
+import { BreadcrumbSchema, ServiceSchema } from "@/components/SchemaOrg";
 import { FEE } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -57,6 +58,16 @@ const SERVICES = [
 export default function WhatYouGetPage() {
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "What You Get", href: "/what-you-get" },
+        ]}
+      />
+      <ServiceSchema
+        name="Creator Management Services"
+        description="Full-service creator management including platform audit, content engine, daily distribution, conversion strategy, and personalized analytics."
+      />
       <Header />
 
       {/* Hero */}

@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Section, { Eyebrow, SectionHeading } from "@/components/Section";
 import Button from "@/components/Button";
+import { BreadcrumbSchema } from "@/components/SchemaOrg";
 
 export const metadata: Metadata = {
   title: "About Sinnyr | Creator Management Agency",
@@ -13,6 +14,12 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "About", href: "/about" },
+        ]}
+      />
       <Header />
 
       {/* Hero */}

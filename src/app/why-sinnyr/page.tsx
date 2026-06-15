@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Section, { Eyebrow, SectionHeading } from "@/components/Section";
 import Button from "@/components/Button";
+import { BreadcrumbSchema } from "@/components/SchemaOrg";
 import { FEE } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -41,6 +42,12 @@ const REASONS = [
 export default function WhySinnyrPage() {
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Why Sinnyr", href: "/why-sinnyr" },
+        ]}
+      />
       <Header />
 
       {/* Hero */}
