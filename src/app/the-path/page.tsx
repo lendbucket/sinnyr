@@ -88,13 +88,13 @@ export default function ThePathPage() {
       <StickyApplyCTA />
 
       {/* Hero */}
-      <section className="bg-dark px-6 pt-32 pb-20 md:pt-40 md:pb-28 lg:px-8">
+      <section className="bg-ink px-6 pt-32 pb-20 md:pt-40 md:pb-28 lg:px-8">
         <div className="mx-auto max-w-7xl text-center">
           <Eyebrow>Onboarding</Eyebrow>
-          <h1 className="mt-6 font-display text-4xl font-light tracking-tight text-ivory sm:text-5xl md:text-6xl lg:text-7xl">
+          <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-cream sm:text-5xl md:text-6xl lg:text-7xl">
             The Path
           </h1>
-          <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-ivory/60">
+          <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-cream/60">
             You do not get dropped into a queue and forgotten. You move through a
             defined journey with clear stages, real deliverables, and visible
             milestones. Here is exactly what that looks like.
@@ -108,10 +108,10 @@ export default function ThePathPage() {
           <ScrollReveal>
             <div className="grid items-start gap-12 lg:grid-cols-12">
               <div className="lg:col-span-5">
-                <p className="font-display text-8xl font-light text-bordeaux/15 md:text-9xl">
+                <p className="text-8xl font-extrabold text-red/15 md:text-9xl">
                   {stage.number}
                 </p>
-                <h2 className="mt-4 font-display text-3xl font-light tracking-tight md:text-4xl">
+                <h2 className="mt-4 text-3xl font-extrabold tracking-tight md:text-4xl">
                   {stage.name}
                 </h2>
                 <p className="mt-2 text-sm font-medium uppercase tracking-widest text-muted">
@@ -124,7 +124,7 @@ export default function ThePathPage() {
               <div className="lg:col-span-6 lg:col-start-7">
                 <div
                   className={`border p-8 lg:p-10 ${
-                    i % 2 === 1 ? "border-white/10" : "border-dark/10"
+                    i % 2 === 1 ? "border-white/10" : "border-ink/10"
                   }`}
                 >
                   <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted">
@@ -133,17 +133,17 @@ export default function ThePathPage() {
                   <ul className="mt-6 space-y-4">
                     {stage.deliverables.map((d) => (
                       <li key={d} className="flex gap-3">
-                        <span className="mt-2 block h-1.5 w-1.5 shrink-0 bg-bordeaux" />
+                        <span className="mt-2 block h-1.5 w-1.5 shrink-0 bg-red" />
                         <span className="opacity-80">{d}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
-                <div className="mt-6 border-l-2 border-bordeaux pl-6">
+                <div className="mt-6 border-l-2 border-red pl-6">
                   <p className="text-xs font-medium uppercase tracking-widest text-muted">
                     Milestone
                   </p>
-                  <p className="mt-2 font-display text-lg italic opacity-80">
+                  <p className="mt-2 text-lg italic opacity-80">
                     {stage.milestone}
                   </p>
                 </div>

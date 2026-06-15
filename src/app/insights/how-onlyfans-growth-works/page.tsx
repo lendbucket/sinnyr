@@ -25,7 +25,7 @@ export default function Article() {
         subscriber who finds you found you somewhere else first.
       </p>
 
-      <h2 className="mt-10 font-display text-2xl font-light text-dark">
+      <h2 className="mt-10 text-2xl font-extrabold text-ink">
         Where subscribers actually come from
       </h2>
       <p>
@@ -46,7 +46,7 @@ export default function Article() {
         deliberate structuring.
       </p>
 
-      <h2 className="mt-10 font-display text-2xl font-light text-dark">
+      <h2 className="mt-10 text-2xl font-extrabold text-ink">
         Why this makes management essential
       </h2>
       <p>
@@ -63,7 +63,7 @@ export default function Article() {
         person to run alone.
       </p>
 
-      <h2 className="mt-10 font-display text-2xl font-light text-dark">
+      <h2 className="mt-10 text-2xl font-extrabold text-ink">
         The role of positioning in a no-discovery platform
       </h2>
       <p>
@@ -77,7 +77,7 @@ export default function Article() {
       </p>
       <p>
         This is why{" "}
-        <Link href="/method" className="text-bordeaux hover:underline">
+        <Link href="/method" className="text-red hover:underline">
           The Sinnyr Method
         </Link>{" "}
         starts with Positioning before Distribution. Sending traffic to an
@@ -85,7 +85,7 @@ export default function Article() {
         make.
       </p>
 
-      <h2 className="mt-10 font-display text-2xl font-light text-dark">
+      <h2 className="mt-10 text-2xl font-extrabold text-ink">
         What this means for you
       </h2>
       <p>

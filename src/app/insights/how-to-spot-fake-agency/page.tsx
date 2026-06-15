@@ -20,7 +20,7 @@ export default function Article() {
         toll booth.
       </p>
 
-      <h2 className="mt-10 font-display text-2xl font-light text-dark">
+      <h2 className="mt-10 text-2xl font-extrabold text-ink">
         Red flag: guaranteed income or growth numbers
       </h2>
       <p>
@@ -37,7 +37,7 @@ export default function Article() {
         they know the work is what they control.
       </p>
 
-      <h2 className="mt-10 font-display text-2xl font-light text-dark">
+      <h2 className="mt-10 text-2xl font-extrabold text-ink">
         Red flag: no contract or vague terms
       </h2>
       <p>
@@ -53,7 +53,7 @@ export default function Article() {
         agreement, walk away.
       </p>
 
-      <h2 className="mt-10 font-display text-2xl font-light text-dark">
+      <h2 className="mt-10 text-2xl font-extrabold text-ink">
         Red flag: they want full account access with no structure
       </h2>
       <p>
@@ -66,7 +66,7 @@ export default function Article() {
         convenience.
       </p>
 
-      <h2 className="mt-10 font-display text-2xl font-light text-dark">
+      <h2 className="mt-10 text-2xl font-extrabold text-ink">
         Red flag: high upfront fees before any work is done
       </h2>
       <p>
@@ -78,7 +78,7 @@ export default function Article() {
         money and whether their incentives are aligned with yours.
       </p>
 
-      <h2 className="mt-10 font-display text-2xl font-light text-dark">
+      <h2 className="mt-10 text-2xl font-extrabold text-ink">
         Red flag: no visible system or process
       </h2>
       <p>
@@ -89,46 +89,46 @@ export default function Article() {
         operation that does not have a system.
       </p>
 
-      <h2 className="mt-10 font-display text-2xl font-light text-dark">
+      <h2 className="mt-10 text-2xl font-extrabold text-ink">
         Questions to ask any agency
       </h2>
       <ul className="mt-4 space-y-3 pl-0">
         <li className="flex gap-3">
-          <span className="mt-1.5 block h-1.5 w-1.5 shrink-0 bg-bordeaux" />
+          <span className="mt-1.5 block h-1.5 w-1.5 shrink-0 bg-red" />
           <span>
             What does your management agreement look like? Can I review it
             before committing?
           </span>
         </li>
         <li className="flex gap-3">
-          <span className="mt-1.5 block h-1.5 w-1.5 shrink-0 bg-bordeaux" />
+          <span className="mt-1.5 block h-1.5 w-1.5 shrink-0 bg-red" />
           <span>
             How do you make money? What is the fee structure, and when do I pay?
           </span>
         </li>
         <li className="flex gap-3">
-          <span className="mt-1.5 block h-1.5 w-1.5 shrink-0 bg-bordeaux" />
+          <span className="mt-1.5 block h-1.5 w-1.5 shrink-0 bg-red" />
           <span>
             What does a typical day or week of management look like for one of
             your creators?
           </span>
         </li>
         <li className="flex gap-3">
-          <span className="mt-1.5 block h-1.5 w-1.5 shrink-0 bg-bordeaux" />
+          <span className="mt-1.5 block h-1.5 w-1.5 shrink-0 bg-red" />
           <span>
             How many creators do you currently manage, and how many people are
             on your team?
           </span>
         </li>
         <li className="flex gap-3">
-          <span className="mt-1.5 block h-1.5 w-1.5 shrink-0 bg-bordeaux" />
+          <span className="mt-1.5 block h-1.5 w-1.5 shrink-0 bg-red" />
           <span>
             What happens if I want to leave? What does the exit process look
             like?
           </span>
         </li>
         <li className="flex gap-3">
-          <span className="mt-1.5 block h-1.5 w-1.5 shrink-0 bg-bordeaux" />
+          <span className="mt-1.5 block h-1.5 w-1.5 shrink-0 bg-red" />
           <span>
             Can you describe your onboarding process in detail?
           </span>
@@ -142,7 +142,7 @@ export default function Article() {
       </p>
       <p>
         We built{" "}
-        <Link href="/why-sinnyr" className="text-bordeaux hover:underline">
+        <Link href="/why-sinnyr" className="text-red hover:underline">
           Sinnyr
         </Link>{" "}
         to be the kind of agency that passes this test. A signed agreement, a

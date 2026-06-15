@@ -109,11 +109,11 @@ export default function ApplyPage() {
     return (
       <>
         <Header />
-        <main className="flex min-h-screen flex-col items-center justify-center bg-dark px-6 text-center">
-          <h1 className="font-display text-4xl font-light tracking-tight text-ivory sm:text-5xl">
+        <main className="flex min-h-screen flex-col items-center justify-center bg-ink px-6 text-center">
+          <h1 className="text-4xl font-extrabold tracking-tight text-cream sm:text-5xl">
             Application received.
           </h1>
-          <p className="mx-auto mt-6 max-w-lg text-lg text-ivory/60">
+          <p className="mx-auto mt-6 max-w-lg text-lg text-cream/60">
             We review every application personally. If there is a fit, we will
             reach out to discuss next steps. This is an application, not a
             signup. Sinnyr creates accounts by invitation only.
@@ -127,16 +127,16 @@ export default function ApplyPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-dark px-6 pt-32 pb-20 md:pt-40 lg:px-8">
+      <main className="min-h-screen bg-ink px-6 pt-32 pb-20 md:pt-40 lg:px-8">
         <div className="mx-auto max-w-2xl">
           <div className="text-center">
             <p className="text-xs font-medium uppercase tracking-[0.3em] text-muted">
               Application
             </p>
-            <h1 className="mt-6 font-display text-4xl font-light tracking-tight text-ivory sm:text-5xl">
+            <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-cream sm:text-5xl">
               Apply to Sinnyr
             </h1>
-            <p className="mt-4 max-w-lg mx-auto text-ivory/50">
+            <p className="mt-4 max-w-lg mx-auto text-cream/50">
               This is an application, not a signup. Sinnyr selects creators and
               creates accounts by invitation only. We run a capped roster. Most
               applicants are not a fit. Applying starts a conversation and an
@@ -151,15 +151,15 @@ export default function ApplyPage() {
                 <div
                   className={`flex h-8 w-8 items-center justify-center text-sm ${
                     i <= step
-                      ? "bg-bordeaux text-white"
-                      : "bg-white/10 text-ivory/40"
+                      ? "bg-red text-white"
+                      : "bg-white/10 text-cream/40"
                   }`}
                 >
                   {i + 1}
                 </div>
                 <span
                   className={`ml-2 hidden text-xs uppercase tracking-widest sm:inline ${
-                    i <= step ? "text-ivory/70" : "text-ivory/30"
+                    i <= step ? "text-cream/70" : "text-cream/30"
                   }`}
                 >
                   {s.label}
@@ -167,7 +167,7 @@ export default function ApplyPage() {
                 {i < STEPS.length - 1 && (
                   <div
                     className={`mx-2 h-px w-6 sm:w-10 md:w-16 ${
-                      i < step ? "bg-bordeaux" : "bg-white/10"
+                      i < step ? "bg-red" : "bg-white/10"
                     }`}
                   />
                 )}
@@ -180,7 +180,7 @@ export default function ApplyPage() {
             {step === 0 && (
               <div className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm text-ivory/60">
+                  <label htmlFor="name" className="block text-sm text-cream/60">
                     Full name *
                   </label>
                   <input
@@ -188,12 +188,12 @@ export default function ApplyPage() {
                     type="text"
                     value={form.name}
                     onChange={(e) => update("name", e.target.value)}
-                    className="mt-2 w-full border border-white/20 bg-transparent px-4 py-3 text-ivory outline-none focus:border-bordeaux"
+                    className="mt-2 w-full border border-white/20 bg-transparent px-4 py-3 text-cream outline-none focus:border-red"
                     required
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm text-ivory/60">
+                  <label htmlFor="email" className="block text-sm text-cream/60">
                     Email address *
                   </label>
                   <input
@@ -201,7 +201,7 @@ export default function ApplyPage() {
                     type="email"
                     value={form.email}
                     onChange={(e) => update("email", e.target.value)}
-                    className="mt-2 w-full border border-white/20 bg-transparent px-4 py-3 text-ivory outline-none focus:border-bordeaux"
+                    className="mt-2 w-full border border-white/20 bg-transparent px-4 py-3 text-cream outline-none focus:border-red"
                     required
                   />
                 </div>
@@ -211,7 +211,7 @@ export default function ApplyPage() {
             {step === 1 && (
               <div className="space-y-6">
                 <div>
-                  <label className="block text-sm text-ivory/60">
+                  <label className="block text-sm text-cream/60">
                     Platforms you are currently active on
                   </label>
                   <div className="mt-3 flex flex-wrap gap-2">
@@ -232,8 +232,8 @@ export default function ApplyPage() {
                           }}
                           className={`border px-4 py-2 text-sm transition-colors ${
                             selected
-                              ? "border-bordeaux bg-bordeaux text-white"
-                              : "border-white/20 text-ivory/60 hover:border-ivory/40"
+                              ? "border-red bg-red text-white"
+                              : "border-white/20 text-cream/60 hover:border-cream/40"
                           }`}
                         >
                           {p}
@@ -243,7 +243,7 @@ export default function ApplyPage() {
                   </div>
                 </div>
                 <div>
-                  <label htmlFor="subscriberCount" className="block text-sm text-ivory/60">
+                  <label htmlFor="subscriberCount" className="block text-sm text-cream/60">
                     Current subscriber/follower count (approximate)
                   </label>
                   <input
@@ -251,12 +251,12 @@ export default function ApplyPage() {
                     type="text"
                     value={form.subscriberCount}
                     onChange={(e) => update("subscriberCount", e.target.value)}
-                    className="mt-2 w-full border border-white/20 bg-transparent px-4 py-3 text-ivory outline-none focus:border-bordeaux"
+                    className="mt-2 w-full border border-white/20 bg-transparent px-4 py-3 text-cream outline-none focus:border-red"
                     placeholder="e.g. 500 subscribers, 10k followers on IG"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm text-ivory/60">
+                  <label className="block text-sm text-cream/60">
                     Current monthly revenue range
                   </label>
                   <div className="mt-3 space-y-2">
@@ -270,15 +270,15 @@ export default function ApplyPage() {
                           name="revenueRange"
                           checked={form.revenueRange === r}
                           onChange={() => update("revenueRange", r)}
-                          className="h-4 w-4 accent-bordeaux"
+                          className="h-4 w-4 accent-red"
                         />
-                        <span className="text-sm text-ivory/70">{r}</span>
+                        <span className="text-sm text-cream/70">{r}</span>
                       </label>
                     ))}
                   </div>
                 </div>
                 <div>
-                  <label htmlFor="niche" className="block text-sm text-ivory/60">
+                  <label htmlFor="niche" className="block text-sm text-cream/60">
                     Your niche or content focus
                   </label>
                   <input
@@ -286,7 +286,7 @@ export default function ApplyPage() {
                     type="text"
                     value={form.niche}
                     onChange={(e) => update("niche", e.target.value)}
-                    className="mt-2 w-full border border-white/20 bg-transparent px-4 py-3 text-ivory outline-none focus:border-bordeaux"
+                    className="mt-2 w-full border border-white/20 bg-transparent px-4 py-3 text-cream outline-none focus:border-red"
                   />
                 </div>
               </div>
@@ -295,7 +295,7 @@ export default function ApplyPage() {
             {step === 2 && (
               <div className="space-y-6">
                 <div>
-                  <label className="block text-sm text-ivory/60">
+                  <label className="block text-sm text-cream/60">
                     How often do you currently post?
                   </label>
                   <div className="mt-3 space-y-2">
@@ -309,15 +309,15 @@ export default function ApplyPage() {
                           name="postingCadence"
                           checked={form.postingCadence === c}
                           onChange={() => update("postingCadence", c)}
-                          className="h-4 w-4 accent-bordeaux"
+                          className="h-4 w-4 accent-red"
                         />
-                        <span className="text-sm text-ivory/70">{c}</span>
+                        <span className="text-sm text-cream/70">{c}</span>
                       </label>
                     ))}
                   </div>
                 </div>
                 <div>
-                  <label htmlFor="socialHandles" className="block text-sm text-ivory/60">
+                  <label htmlFor="socialHandles" className="block text-sm text-cream/60">
                     Social handles and approximate following
                   </label>
                   <textarea
@@ -325,7 +325,7 @@ export default function ApplyPage() {
                     value={form.socialHandles}
                     onChange={(e) => update("socialHandles", e.target.value)}
                     rows={3}
-                    className="mt-2 w-full border border-white/20 bg-transparent px-4 py-3 text-ivory outline-none focus:border-bordeaux"
+                    className="mt-2 w-full border border-white/20 bg-transparent px-4 py-3 text-cream outline-none focus:border-red"
                     placeholder="e.g. @handle on TikTok (50k), @handle on IG (12k)"
                   />
                 </div>
@@ -335,7 +335,7 @@ export default function ApplyPage() {
             {step === 3 && (
               <div className="space-y-6">
                 <div>
-                  <label htmlFor="goals" className="block text-sm text-ivory/60">
+                  <label htmlFor="goals" className="block text-sm text-cream/60">
                     What are your goals for the next 6 to 12 months?
                   </label>
                   <textarea
@@ -343,11 +343,11 @@ export default function ApplyPage() {
                     value={form.goals}
                     onChange={(e) => update("goals", e.target.value)}
                     rows={4}
-                    className="mt-2 w-full border border-white/20 bg-transparent px-4 py-3 text-ivory outline-none focus:border-bordeaux"
+                    className="mt-2 w-full border border-white/20 bg-transparent px-4 py-3 text-cream outline-none focus:border-red"
                   />
                 </div>
                 <div>
-                  <label htmlFor="whySinnyr" className="block text-sm text-ivory/60">
+                  <label htmlFor="whySinnyr" className="block text-sm text-cream/60">
                     Why Sinnyr? What are you looking for in a management agency?
                   </label>
                   <textarea
@@ -355,7 +355,7 @@ export default function ApplyPage() {
                     value={form.whySinnyr}
                     onChange={(e) => update("whySinnyr", e.target.value)}
                     rows={4}
-                    className="mt-2 w-full border border-white/20 bg-transparent px-4 py-3 text-ivory outline-none focus:border-bordeaux"
+                    className="mt-2 w-full border border-white/20 bg-transparent px-4 py-3 text-cream outline-none focus:border-red"
                   />
                 </div>
               </div>
@@ -372,7 +372,7 @@ export default function ApplyPage() {
                 <button
                   type="button"
                   onClick={prev}
-                  className="text-sm uppercase tracking-widest text-ivory/50 transition-colors hover:text-ivory"
+                  className="text-sm uppercase tracking-widest text-cream/50 transition-colors hover:text-cream"
                 >
                   Back
                 </button>
@@ -385,7 +385,7 @@ export default function ApplyPage() {
                   type="button"
                   onClick={next}
                   disabled={!canAdvance()}
-                  className="border border-bordeaux bg-bordeaux px-8 py-3 text-sm font-medium uppercase tracking-widest text-white transition-colors hover:bg-transparent hover:text-bordeaux disabled:opacity-40 disabled:hover:bg-bordeaux disabled:hover:text-white"
+                  className="border border-red bg-red px-8 py-3 text-sm font-medium uppercase tracking-widest text-white transition-colors hover:bg-transparent hover:text-red disabled:opacity-40 disabled:hover:bg-red disabled:hover:text-white"
                 >
                   Continue
                 </button>
@@ -394,16 +394,16 @@ export default function ApplyPage() {
                   type="button"
                   onClick={submit}
                   disabled={status === "loading"}
-                  className="border border-bordeaux bg-bordeaux px-8 py-3 text-sm font-medium uppercase tracking-widest text-white transition-colors hover:bg-transparent hover:text-bordeaux disabled:opacity-40"
+                  className="border border-red bg-red px-8 py-3 text-sm font-medium uppercase tracking-widest text-white transition-colors hover:bg-transparent hover:text-red disabled:opacity-40"
                 >
                   {status === "loading" ? "Submitting..." : "Submit Application"}
                 </button>
               )}
             </div>
 
-            <p className="mt-8 text-center text-xs text-ivory/30">
+            <p className="mt-8 text-center text-xs text-cream/30">
               By submitting this application, you agree to our{" "}
-              <a href="/legal/privacy" className="underline hover:text-ivory/50">
+              <a href="/legal/privacy" className="underline hover:text-cream/50">
                 Privacy Policy
               </a>
               . Sinnyr creates accounts by invitation only. Applying does not

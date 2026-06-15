@@ -25,7 +25,7 @@ export default function Article() {
         subscriber represents wasted work you have to repeat just to stay even.
       </p>
 
-      <h2 className="mt-10 font-display text-2xl font-light text-dark">
+      <h2 className="mt-10 text-2xl font-extrabold text-ink">
         Why subscribers leave
       </h2>
       <p>
@@ -42,7 +42,7 @@ export default function Article() {
         deliberate retention strategy, not just a content calendar.
       </p>
 
-      <h2 className="mt-10 font-display text-2xl font-light text-dark">
+      <h2 className="mt-10 text-2xl font-extrabold text-ink">
         What retention actually looks like
       </h2>
       <p>
@@ -61,7 +61,7 @@ export default function Article() {
         and one that treads water.
       </p>
 
-      <h2 className="mt-10 font-display text-2xl font-light text-dark">
+      <h2 className="mt-10 text-2xl font-extrabold text-ink">
         Retention is cheaper than acquisition
       </h2>
       <p>
@@ -74,7 +74,7 @@ export default function Article() {
       </p>
       <p>
         This is why{" "}
-        <Link href="/method" className="text-bordeaux hover:underline">
+        <Link href="/method" className="text-red hover:underline">
           The Sinnyr Method
         </Link>{" "}
         tracks retention as a core metric in the Daily Signal. Your daily

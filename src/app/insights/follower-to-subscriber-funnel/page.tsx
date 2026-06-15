@@ -19,40 +19,40 @@ export default function Article() {
         free platform to entering their card information on a paid one.
       </p>
 
-      <h2 className="mt-10 font-display text-2xl font-light text-dark">
+      <h2 className="mt-10 text-2xl font-extrabold text-ink">
         The stages of the funnel
       </h2>
       <p>
         The funnel has four stages, and each one leaks differently.
       </p>
       <p>
-        <strong className="text-dark">Awareness.</strong> Someone sees your
+        <strong className="text-ink">Awareness.</strong> Someone sees your
         content on TikTok, Reddit, X, or Instagram. They are curious. This is
         the top of the funnel, and it requires volume, consistency, and content
         that stops a scroll.
       </p>
       <p>
-        <strong className="text-dark">Interest.</strong> They visit your profile
+        <strong className="text-ink">Interest.</strong> They visit your profile
         on the free platform. Your bio, your pinned content, and your overall
         presentation either pull them deeper or lose them. If your profile does
         not clearly communicate what you offer and where to find more, the click
         never happens.
       </p>
       <p>
-        <strong className="text-dark">Click.</strong> They follow your link to
+        <strong className="text-ink">Click.</strong> They follow your link to
         your OnlyFans or Fansly page. Your link-in-bio setup, your landing
         experience, and your pricing page are now doing the selling. Every extra
         click, every unclear element, and every point of friction costs
         conversions.
       </p>
       <p>
-        <strong className="text-dark">Subscribe.</strong> They enter payment
+        <strong className="text-ink">Subscribe.</strong> They enter payment
         information and subscribe. Your pricing, your preview content, your
         welcome message, and the perceived value of what they are about to
         access determine whether this happens.
       </p>
 
-      <h2 className="mt-10 font-display text-2xl font-light text-dark">
+      <h2 className="mt-10 text-2xl font-extrabold text-ink">
         Where most creators leak
       </h2>
       <p>
@@ -71,7 +71,7 @@ export default function Article() {
         and no social proof that makes the subscription feel worth the price.
       </p>
 
-      <h2 className="mt-10 font-display text-2xl font-light text-dark">
+      <h2 className="mt-10 text-2xl font-extrabold text-ink">
         Why this matters for management
       </h2>
       <p>
@@ -83,7 +83,7 @@ export default function Article() {
       </p>
       <p>
         This is what{" "}
-        <Link href="/method" className="text-bordeaux hover:underline">
+        <Link href="/method" className="text-red hover:underline">
           Positioning and Conversion
         </Link>{" "}
         in The Sinnyr Method cover. The funnel is built and optimized before

@@ -33,17 +33,17 @@ export default function Home() {
       <StickyApplyCTA />
 
       {/* Hero */}
-      <section className="relative flex min-h-screen flex-col items-center justify-center bg-dark px-6 text-center">
+      <section className="relative flex min-h-screen flex-col items-center justify-center bg-ink px-6 text-center">
         <div className="relative z-10 max-w-5xl">
-          <p className="text-xs font-medium uppercase tracking-[0.3em] text-bordeaux">
+          <p className="text-xs font-medium uppercase tracking-[0.3em] text-red">
             Application Only
           </p>
-          <h1 className="mt-8 font-display text-[clamp(2.5rem,7vw,6rem)] font-light leading-[1.05] tracking-tight text-ivory">
+          <h1 className="mt-8 text-[clamp(2.5rem,7vw,6rem)] font-extrabold leading-[1.05] tracking-tight text-cream">
             OnlyFans Management
             <br />
-            <span className="text-bordeaux">Agency</span>
+            <span className="text-red">Agency</span>
           </h1>
-          <p className="mx-auto mt-10 max-w-2xl text-lg leading-relaxed text-ivory/60 md:text-xl">
+          <p className="mx-auto mt-10 max-w-2xl text-lg leading-relaxed text-cream/60 md:text-xl">
             Most creators are doing ten jobs and getting paid for one. You were
             never supposed to run all of this alone. Sinnyr is a selective
             management agency that runs the full operation behind you, so you can
@@ -52,12 +52,12 @@ export default function Home() {
           <div className="mt-12 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Button href="/apply">Apply Now</Button>
             <Button href="/method" variant="outline">
-              <span className="text-ivory hover:text-dark">
+              <span className="text-cream hover:text-ink">
                 The Sinnyr Method
               </span>
             </Button>
           </div>
-          <p className="mt-6 text-xs text-ivory/30">
+          <p className="mt-6 text-xs text-cream/30">
             We accept a limited number of creators. Most applicants are not a fit.
           </p>
         </div>
@@ -71,7 +71,7 @@ export default function Home() {
             <SectionHeading>
               Here is what winning on this platform actually requires.
             </SectionHeading>
-            <p className="mt-6 text-lg leading-relaxed text-dark/70">
+            <p className="mt-6 text-lg leading-relaxed text-ink/70">
               The creators at the top are not just better at making content. They
               are running a full business operation, every single day. Here is the
               real list of what it takes to compete:
@@ -82,8 +82,8 @@ export default function Home() {
           <div className="mx-auto mt-12 max-w-3xl">
             <ol className="space-y-5">
               {OPERATIONS.map((op, i) => (
-                <li key={i} className="flex gap-4 text-lg text-dark/80">
-                  <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center font-display text-sm text-bordeaux">
+                <li key={i} className="flex gap-4 text-lg text-ink/80">
+                  <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center text-sm text-red">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <span>{op}</span>
@@ -98,7 +98,7 @@ export default function Home() {
               No single person can run all of this at a high level and still
               create. The creators who win have a team behind them.
             </PullQuote>
-            <p className="mt-8 text-lg leading-relaxed text-dark/70">
+            <p className="mt-8 text-lg leading-relaxed text-ink/70">
               The real choice is not agency or no agency. It is a real system or a
               plateau and burnout. The agencies that signed you up, collected a
               cut, and checked in once a week were never built for you to win.
@@ -114,10 +114,10 @@ export default function Home() {
         <ScrollReveal>
           <div className="text-center">
             <Eyebrow>Our system</Eyebrow>
-            <SectionHeading className="text-ivory">
+            <SectionHeading className="text-cream">
               The Sinnyr Method
             </SectionHeading>
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-ivory/60">
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-cream/60">
               Six components. Each one does real work that a creator cannot run
               alone. No invented science. No fake metrics. A defined operating
               system with deliverables at every stage.
@@ -127,14 +127,14 @@ export default function Home() {
         <div className="mt-16 grid gap-px bg-white/10 md:grid-cols-2 lg:grid-cols-3">
           {METHOD_STEPS.map((step, i) => (
             <ScrollReveal key={step.number} delay={i * 80}>
-              <div className="bg-dark p-8 lg:p-10">
-                <p className="font-display text-3xl font-light text-bordeaux/30">
+              <div className="bg-ink p-8 lg:p-10">
+                <p className="text-3xl font-extrabold text-red/30">
                   {step.number}
                 </p>
-                <h3 className="mt-3 font-display text-xl text-ivory">
+                <h3 className="mt-3 text-xl text-cream">
                   {step.name}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-ivory/50">
+                <p className="mt-3 text-sm leading-relaxed text-cream/50">
                   {step.short}
                 </p>
               </div>
@@ -155,31 +155,31 @@ export default function Home() {
               <SectionHeading>
                 We run a capped roster. Here is why.
               </SectionHeading>
-              <p className="mt-6 text-lg leading-relaxed text-dark/70">
+              <p className="mt-6 text-lg leading-relaxed text-ink/70">
                 Every creator Sinnyr signs gets the full operation: a dedicated
                 team, daily distribution, managed sales and messaging, and a
                 personalized analytics briefing every morning. That level of
                 hands-on work is only possible with a limited number of creators
                 at once.
               </p>
-              <p className="mt-4 text-lg leading-relaxed text-dark/70">
+              <p className="mt-4 text-lg leading-relaxed text-ink/70">
                 When our roster is full, new applications join a waitlist. We do
                 not expand capacity by lowering the standard. Being signed by
                 Sinnyr means you cleared a real bar, and the system behind you is
                 undivided.
               </p>
-              <p className="mt-4 text-lg leading-relaxed text-dark/70">
+              <p className="mt-4 text-lg leading-relaxed text-ink/70">
                 This is not artificial scarcity. It is the structural reality of
                 doing this work properly.
               </p>
             </div>
           </ScrollReveal>
           <ScrollReveal delay={150}>
-            <div className="border border-dark/10 p-10 lg:p-14">
+            <div className="border border-ink/10 p-10 lg:p-14">
               <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted">
                 What we evaluate
               </p>
-              <ul className="mt-6 space-y-5 text-dark/80">
+              <ul className="mt-6 space-y-5 text-ink/80">
                 {[
                   "You are already producing content consistently, not planning to start",
                   "You are willing to follow a structured system, not freelance within one",
@@ -188,7 +188,7 @@ export default function Home() {
                   "You are coachable, because the system works when both sides commit",
                 ].map((item) => (
                   <li key={item} className="flex gap-3">
-                    <span className="mt-1.5 block h-1.5 w-1.5 shrink-0 bg-bordeaux" />
+                    <span className="mt-1.5 block h-1.5 w-1.5 shrink-0 bg-red" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -203,10 +203,10 @@ export default function Home() {
         <ScrollReveal>
           <div className="mx-auto max-w-3xl text-center">
             <Eyebrow>The journey</Eyebrow>
-            <SectionHeading className="text-ivory">
+            <SectionHeading className="text-cream">
               Four stages. Clear deliverables. Visible progress from day one.
             </SectionHeading>
-            <p className="mt-6 text-lg leading-relaxed text-ivory/60">
+            <p className="mt-6 text-lg leading-relaxed text-cream/60">
               You do not get dropped into a queue and forgotten. You move through
               a defined onboarding path: Intake and Audit, Foundation, Launch, and
               Growth. At each stage, you know exactly what we are building, what
@@ -229,7 +229,7 @@ export default function Home() {
               <SectionHeading>
                 We teach everything we know. For free.
               </SectionHeading>
-              <p className="mt-6 text-lg leading-relaxed text-dark/70">
+              <p className="mt-6 text-lg leading-relaxed text-ink/70">
                 A firm that can teach the whole game at a deep level is obviously
                 the one to run it for you. We publish real strategy, real
                 operations knowledge, and real answers to the questions most
@@ -259,9 +259,9 @@ export default function Home() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="group block border border-dark/10 p-6 transition-shadow hover:shadow-lg"
+                  className="group block border border-ink/10 p-6 transition-shadow hover:shadow-lg"
                 >
-                  <p className="font-display text-lg font-light tracking-tight transition-colors group-hover:text-bordeaux">
+                  <p className="text-lg font-extrabold tracking-tight transition-colors group-hover:text-red">
                     {article.title}
                   </p>
                   <p className="mt-2 text-sm text-muted">Read article</p>
@@ -277,19 +277,19 @@ export default function Home() {
         <ScrollReveal>
           <div className="mx-auto max-w-3xl text-center">
             <Eyebrow>Fees</Eyebrow>
-            <SectionHeading className="text-ivory">
+            <SectionHeading className="text-cream">
               Simple, aligned, transparent.
             </SectionHeading>
             <p className="mx-auto mt-8 max-w-xl">
-              <span className="block font-display text-5xl font-light text-ivory md:text-6xl">
+              <span className="block text-5xl font-extrabold text-cream md:text-6xl">
                 {FEE.percentage}%
               </span>
-              <span className="mt-3 block text-sm text-ivory/50">
+              <span className="mt-3 block text-sm text-cream/50">
                 of your earnings, or ${FEE.minimumMonthly}/month, whichever is
                 greater
               </span>
             </p>
-            <p className="mt-8 text-lg leading-relaxed text-ivory/60">
+            <p className="mt-8 text-lg leading-relaxed text-cream/60">
               We earn when you earn. No setup fees, no hidden costs, no lock-in
               contracts. The percentage model means our only incentive is to grow
               your business. If we do not do the work, we do not get paid. That
@@ -306,7 +306,7 @@ export default function Home() {
             <SectionHeading>
               You know whether this is what you have been looking for.
             </SectionHeading>
-            <p className="mt-6 text-lg leading-relaxed text-dark/70">
+            <p className="mt-6 text-lg leading-relaxed text-ink/70">
               Applying is not signing up. It is the first step in a conversation.
               We review every application personally, and if there is a fit, we
               will reach out to discuss what working together looks like.
@@ -314,7 +314,7 @@ export default function Home() {
             <div className="mt-10">
               <Button href="/apply">Submit Your Application</Button>
             </div>
-            <p className="mt-4 text-sm text-dark/40">
+            <p className="mt-4 text-sm text-ink/40">
               Sinnyr creates accounts by invitation only. Most applicants are not
               a fit.
             </p>

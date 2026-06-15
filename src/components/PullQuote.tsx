@@ -9,8 +9,8 @@ export default function PullQuote({
 }) {
   return (
     <blockquote
-      className={`border-l-2 border-bordeaux pl-8 font-display text-2xl font-light italic leading-relaxed tracking-tight md:text-3xl ${
-        dark ? "text-ivory/80" : "text-dark/80"
+      className={`border-l-2 border-red pl-8 text-2xl font-bold leading-snug tracking-tight md:text-3xl ${
+        dark ? "text-cream/80" : "text-ink/80"
       }`}
     >
       {children}

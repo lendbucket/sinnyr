@@ -27,13 +27,13 @@ export default function AboutPage() {
       <StickyApplyCTA />
 
       {/* Hero */}
-      <section className="bg-dark px-6 pt-32 pb-20 md:pt-40 md:pb-28 lg:px-8">
+      <section className="bg-ink px-6 pt-32 pb-20 md:pt-40 md:pb-28 lg:px-8">
         <div className="mx-auto max-w-7xl text-center">
           <Eyebrow>About</Eyebrow>
-          <h1 className="mt-6 font-display text-4xl font-light tracking-tight text-ivory sm:text-5xl md:text-6xl lg:text-7xl">
+          <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-cream sm:text-5xl md:text-6xl lg:text-7xl">
             Creator Management Agency
           </h1>
-          <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-ivory/60">
+          <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-cream/60">
             Sinnyr exists because most creator agencies are not agencies at all.
             They are loose operations that sign everyone, deliver nothing, and
             disappear when the questions get hard. We built something different.
@@ -49,7 +49,7 @@ export default function AboutPage() {
             <SectionHeading>
               This industry needed a real management firm.
             </SectionHeading>
-            <div className="mt-8 space-y-6 text-lg leading-relaxed text-dark/70">
+            <div className="mt-8 space-y-6 text-lg leading-relaxed text-ink/70">
               <p>
                 The creator economy is large, growing, and largely unprofessional
                 behind the scenes. Creators doing serious work are managed by
@@ -78,10 +78,10 @@ export default function AboutPage() {
         <ScrollReveal>
           <div className="mx-auto max-w-3xl">
             <Eyebrow>Selectivity</Eyebrow>
-            <SectionHeading className="text-ivory">
+            <SectionHeading className="text-cream">
               A capped roster, and a real reason for it.
             </SectionHeading>
-            <div className="mt-8 space-y-6 text-lg leading-relaxed text-ivory/60">
+            <div className="mt-8 space-y-6 text-lg leading-relaxed text-cream/60">
               <p>
                 We are selective because the system demands it. Managing a
                 creator properly takes real hours, real strategy, and real
@@ -116,7 +116,7 @@ export default function AboutPage() {
             <SectionHeading>
               Managed like professional talent.
             </SectionHeading>
-            <div className="mt-8 space-y-6 text-lg leading-relaxed text-dark/70">
+            <div className="mt-8 space-y-6 text-lg leading-relaxed text-ink/70">
               <p>
                 Every creator we represent goes through a real onboarding
                 process: a signed management agreement, identity verification, a
@@ -150,10 +150,10 @@ export default function AboutPage() {
           <ScrollReveal>
             <div>
               <Eyebrow>The standard</Eyebrow>
-              <SectionHeading className="text-ivory">
+              <SectionHeading className="text-cream">
                 What we hold ourselves to.
               </SectionHeading>
-              <p className="mt-6 text-lg leading-relaxed text-ivory/60">
+              <p className="mt-6 text-lg leading-relaxed text-cream/60">
                 We do not make claims we cannot back up. We do not publish fake
                 testimonials or invented numbers. We do not promise specific
                 results, because every creator's situation is different. What we
@@ -189,12 +189,12 @@ export default function AboutPage() {
               ].map((item) => (
                 <div
                   key={item.label}
-                  className="border-l-2 border-bordeaux pl-6"
+                  className="border-l-2 border-red pl-6"
                 >
-                  <p className="font-display text-lg text-ivory">
+                  <p className="text-lg text-cream">
                     {item.label}
                   </p>
-                  <p className="mt-1 text-ivory/50">{item.text}</p>
+                  <p className="mt-1 text-cream/50">{item.text}</p>
                 </div>
               ))}
             </div>
@@ -209,7 +209,7 @@ export default function AboutPage() {
             <SectionHeading>
               We are looking for creators who want to be taken seriously.
             </SectionHeading>
-            <p className="mt-6 text-lg leading-relaxed text-dark/70">
+            <p className="mt-6 text-lg leading-relaxed text-ink/70">
               If you are tired of agencies that over-promise and under-deliver,
               and you want to work with a firm that operates with structure and
               accountability, we should talk.
@@ -217,7 +217,7 @@ export default function AboutPage() {
             <div className="mt-10">
               <Button href="/apply">Apply to Sinnyr</Button>
             </div>
-            <p className="mt-4 text-sm text-dark/40">
+            <p className="mt-4 text-sm text-ink/40">
               Sinnyr creates accounts by invitation only. Most applicants are
               not a fit.
             </p>

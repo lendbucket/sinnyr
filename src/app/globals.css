@@ -1,21 +1,25 @@
 @import "tailwindcss";
 
 :root {
-  --color-ivory: #F6F2EC;
-  --color-dark: #14110F;
-  --color-bordeaux: #6B2737;
-  --color-muted: #B7ADA1;
-  --font-display: var(--font-fraunces);
-  --font-body: var(--font-inter);
+  --color-cream: #FAF4E8;
+  --color-cream-alt: #F3EAD8;
+  --color-ink: #15110D;
+  --color-red: #ED2100;
+  --color-red-hover: #C71C00;
+  --color-muted: #6E665C;
+  --color-hairline: #E5DCCB;
+  --font-sans: var(--font-inter);
 }
 
 @theme inline {
-  --color-ivory: var(--color-ivory);
-  --color-dark: var(--color-dark);
-  --color-bordeaux: var(--color-bordeaux);
+  --color-cream: var(--color-cream);
+  --color-cream-alt: var(--color-cream-alt);
+  --color-ink: var(--color-ink);
+  --color-red: var(--color-red);
+  --color-red-hover: var(--color-red-hover);
   --color-muted: var(--color-muted);
-  --font-display: var(--font-display);
-  --font-body: var(--font-body);
+  --color-hairline: var(--color-hairline);
+  --font-sans: var(--font-sans);
 }
 
 * {
@@ -38,18 +42,20 @@ html {
 }
 
 body {
-  background-color: var(--color-ivory);
-  color: var(--color-dark);
-  font-family: var(--font-body), system-ui, sans-serif;
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display), serif;
+::selection {
+  background-color: var(--color-red);
+  color: white;
 }
 
-::selection {
-  background-color: var(--color-bordeaux);
-  color: white;
+/* Focus ring in red for accessibility */
+:focus-visible {
+  outline: 2px solid var(--color-red);
+  outline-offset: 2px;
 }

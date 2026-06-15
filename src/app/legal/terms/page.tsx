@@ -12,21 +12,21 @@ export default function TermsPage() {
   return (
     <>
       <Header />
-      <main className="bg-ivory px-6 pt-32 pb-20 md:pt-40 lg:px-8">
+      <main className="bg-cream px-6 pt-32 pb-20 md:pt-40 lg:px-8">
         <article className="prose-custom mx-auto max-w-3xl">
           <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted">
             Legal
           </p>
-          <h1 className="mt-4 font-display text-4xl font-light tracking-tight md:text-5xl">
+          <h1 className="mt-4 text-4xl font-extrabold tracking-tight md:text-5xl">
             Terms of Use
           </h1>
-          <p className="mt-4 text-sm text-dark/50">
+          <p className="mt-4 text-sm text-ink/50">
             Last updated: June 2026
           </p>
 
-          <div className="mt-12 space-y-8 text-dark/70 leading-relaxed">
+          <div className="mt-12 space-y-8 text-ink/70 leading-relaxed">
             <section>
-              <h2 className="font-display text-2xl font-light text-dark">
+              <h2 className="text-2xl font-extrabold text-ink">
                 Agreement to Terms
               </h2>
               <p className="mt-4">
@@ -37,7 +37,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="font-display text-2xl font-light text-dark">
+              <h2 className="text-2xl font-extrabold text-ink">
                 Nature of this Site
               </h2>
               <p className="mt-4">
@@ -50,7 +50,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="font-display text-2xl font-light text-dark">
+              <h2 className="text-2xl font-extrabold text-ink">
                 Application Process
               </h2>
               <p className="mt-4">
@@ -65,7 +65,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="font-display text-2xl font-light text-dark">
+              <h2 className="text-2xl font-extrabold text-ink">
                 No Guarantees
               </h2>
               <p className="mt-4">
@@ -79,7 +79,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="font-display text-2xl font-light text-dark">
+              <h2 className="text-2xl font-extrabold text-ink">
                 Intellectual Property
               </h2>
               <p className="mt-4">
@@ -92,7 +92,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="font-display text-2xl font-light text-dark">
+              <h2 className="text-2xl font-extrabold text-ink">
                 Limitation of Liability
               </h2>
               <p className="mt-4">
@@ -105,7 +105,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="font-display text-2xl font-light text-dark">
+              <h2 className="text-2xl font-extrabold text-ink">
                 Third-Party Links
               </h2>
               <p className="mt-4">
@@ -116,7 +116,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="font-display text-2xl font-light text-dark">
+              <h2 className="text-2xl font-extrabold text-ink">
                 Changes to These Terms
               </h2>
               <p className="mt-4">
@@ -127,14 +127,14 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="font-display text-2xl font-light text-dark">
+              <h2 className="text-2xl font-extrabold text-ink">
                 Contact
               </h2>
               <p className="mt-4">
                 For questions about these terms, contact us at{" "}
                 <a
                   href={`mailto:${SITE.contact.email}`}
-                  className="text-bordeaux hover:underline"
+                  className="text-red hover:underline"
                 >
                   {SITE.contact.email}
                 </a>
@@ -142,7 +142,7 @@ export default function TermsPage() {
               </p>
             </section>
 
-            <p className="mt-8 text-sm text-dark/40">
+            <p className="mt-8 text-sm text-ink/40">
               These terms should be reviewed by a qualified attorney for your
               specific jurisdiction before relying on them as legal compliance.
             </p>

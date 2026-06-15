@@ -1,5 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import { NAV, SITE } from "@/lib/constants";
+import { SITE } from "@/lib/constants";
 
 const FOOTER_LINKS = [
   {
@@ -30,22 +31,28 @@ const FOOTER_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="bg-dark text-ivory">
+    <footer className="bg-ink text-cream">
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand column */}
           <div>
-            <Link href="/" className="font-display text-2xl tracking-tight">
-              {SITE.name}
+            <Link href="/" className="inline-block">
+              <Image
+                src="/sinnyr-logo-cream.png"
+                alt={`${SITE.name} logo`}
+                width={120}
+                height={40}
+                className="h-8 w-auto"
+              />
             </Link>
-            <p className="mt-4 text-sm leading-relaxed text-ivory/50">
+            <p className="mt-4 text-sm leading-relaxed text-cream/50">
               A selective creator management agency. We manage talent, not
               accounts.
             </p>
-            <p className="mt-6 text-sm text-ivory/40">
+            <p className="mt-6 text-sm text-cream/40">
               <a
                 href={`mailto:${SITE.contact.email}`}
-                className="transition-colors hover:text-ivory/70"
+                className="transition-colors hover:text-cream/70"
               >
                 {SITE.contact.email}
               </a>
@@ -55,7 +62,7 @@ export default function Footer() {
           {/* Link columns */}
           {FOOTER_LINKS.map((col) => (
             <div key={col.heading}>
-              <p className="text-xs font-medium uppercase tracking-widest text-ivory/40">
+              <p className="text-xs font-semibold uppercase tracking-widest text-cream/40">
                 {col.heading}
               </p>
               <ul className="mt-4 space-y-3">
@@ -63,7 +70,7 @@ export default function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-sm text-ivory/60 transition-colors hover:text-ivory"
+                      className="text-sm text-cream/60 transition-colors hover:text-cream"
                     >
                       {link.label}
                     </Link>
@@ -76,7 +83,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-16 border-t border-white/10 pt-8">
-          <p className="text-xs text-ivory/30">
+          <p className="text-xs text-cream/30">
             &copy; {new Date().getFullYear()} {SITE.name}. All rights reserved.
           </p>
         </div>

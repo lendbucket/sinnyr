@@ -61,13 +61,13 @@ export default function MethodPage() {
       <StickyApplyCTA />
 
       {/* Hero */}
-      <section className="bg-dark px-6 pt-32 pb-20 md:pt-40 md:pb-28 lg:px-8">
+      <section className="bg-ink px-6 pt-32 pb-20 md:pt-40 md:pb-28 lg:px-8">
         <div className="mx-auto max-w-7xl text-center">
           <Eyebrow>Our system</Eyebrow>
-          <h1 className="mt-6 font-display text-4xl font-light tracking-tight text-ivory sm:text-5xl md:text-6xl lg:text-7xl">
+          <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-cream sm:text-5xl md:text-6xl lg:text-7xl">
             The Sinnyr Method
           </h1>
-          <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-ivory/60">
+          <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-cream/60">
             The Sinnyr Method is the operating system behind every creator we
             manage. Six components, each designed to do work that a creator
             cannot do alone, connected into a single daily operation. There is
@@ -92,7 +92,7 @@ export default function MethodPage() {
                     i % 2 === 1 ? "lg:col-start-10" : ""
                   }`}
                 >
-                  <p className="font-display text-8xl font-light text-bordeaux/15 md:text-9xl">
+                  <p className="text-8xl font-extrabold text-red/15 md:text-9xl">
                     {step.number}
                   </p>
                 </div>
@@ -101,13 +101,13 @@ export default function MethodPage() {
                     i % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""
                   }`}
                 >
-                  <h2 className="font-display text-3xl font-light tracking-tight md:text-4xl">
+                  <h2 className="text-3xl font-extrabold tracking-tight md:text-4xl">
                     {step.name}
                   </h2>
                   <p className="mt-2 text-sm font-medium uppercase tracking-widest text-muted">
                     {step.short}
                   </p>
-                  <p className="mt-6 text-lg leading-relaxed text-dark/70">
+                  <p className="mt-6 text-lg leading-relaxed text-ink/70">
                     {step.description}
                   </p>
                 </div>
@@ -135,7 +135,7 @@ export default function MethodPage() {
           <div className="text-center">
             <Eyebrow>The difference</Eyebrow>
             <SectionHeading>Alone versus managed.</SectionHeading>
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-dark/70">
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-ink/70">
               These are not hypothetical scenarios. They are the daily reality of
               creators who are trying to build a business without a system behind
               them.
@@ -145,18 +145,18 @@ export default function MethodPage() {
         <div className="mt-16 space-y-6">
           {GAP_FIX.map((row, i) => (
             <ScrollReveal key={i} delay={i * 80}>
-              <div className="grid gap-px border border-dark/10 bg-dark/10 md:grid-cols-2">
-                <div className="bg-ivory p-8">
-                  <p className="text-xs font-medium uppercase tracking-widest text-dark/30">
+              <div className="grid gap-px border border-ink/10 bg-ink/10 md:grid-cols-2">
+                <div className="bg-cream p-8">
+                  <p className="text-xs font-medium uppercase tracking-widest text-ink/30">
                     On your own
                   </p>
-                  <p className="mt-3 text-dark/60">{row.alone}</p>
+                  <p className="mt-3 text-ink/60">{row.alone}</p>
                 </div>
-                <div className="bg-dark p-8">
-                  <p className="text-xs font-medium uppercase tracking-widest text-bordeaux">
+                <div className="bg-ink p-8">
+                  <p className="text-xs font-medium uppercase tracking-widest text-red">
                     With Sinnyr
                   </p>
-                  <p className="mt-3 text-ivory/80">{row.managed}</p>
+                  <p className="mt-3 text-cream/80">{row.managed}</p>
                 </div>
               </div>
             </ScrollReveal>
@@ -168,10 +168,10 @@ export default function MethodPage() {
       <Section dark>
         <ScrollReveal>
           <div className="mx-auto max-w-3xl text-center">
-            <SectionHeading className="text-ivory">
+            <SectionHeading className="text-cream">
               The method works when the creator is right.
             </SectionHeading>
-            <p className="mt-6 text-lg leading-relaxed text-ivory/60">
+            <p className="mt-6 text-lg leading-relaxed text-cream/60">
               We do not take everyone, because the system requires commitment
               from both sides. If you are serious about treating your content as
               a business, start with an application.
@@ -179,7 +179,7 @@ export default function MethodPage() {
             <div className="mt-10">
               <Button href="/apply">Apply to Sinnyr</Button>
             </div>
-            <p className="mt-4 text-sm text-ivory/40">
+            <p className="mt-4 text-sm text-cream/40">
               Sinnyr creates accounts by invitation only. Most applicants are
               not a fit.
             </p>

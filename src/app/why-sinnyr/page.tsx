@@ -93,13 +93,13 @@ export default function WhySinnyrPage() {
       <StickyApplyCTA />
 
       {/* Hero */}
-      <section className="bg-dark px-6 pt-32 pb-20 md:pt-40 md:pb-28 lg:px-8">
+      <section className="bg-ink px-6 pt-32 pb-20 md:pt-40 md:pb-28 lg:px-8">
         <div className="mx-auto max-w-7xl text-center">
           <Eyebrow>Trust</Eyebrow>
-          <h1 className="mt-6 font-display text-4xl font-light tracking-tight text-ivory sm:text-5xl md:text-6xl lg:text-7xl">
+          <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-cream sm:text-5xl md:text-6xl lg:text-7xl">
             Why Sinnyr
           </h1>
-          <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-ivory/60">
+          <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-cream/60">
             The top of this platform is not luck. It is an operation. Most
             creators are running that operation alone, doing ten jobs, getting
             paid for one, and wondering why growth has stalled. Here is why it
@@ -116,7 +116,7 @@ export default function WhySinnyrPage() {
             <SectionHeading>
               What the top of this platform actually requires.
             </SectionHeading>
-            <p className="mt-6 text-lg leading-relaxed text-dark/70">
+            <p className="mt-6 text-lg leading-relaxed text-ink/70">
               This is not a list designed to overwhelm you. It is an honest
               inventory. Every item below is a daily or weekly operation that the
               creators at the top are running, either themselves or through a
@@ -127,11 +127,11 @@ export default function WhySinnyrPage() {
         <div className="mx-auto mt-14 max-w-3xl space-y-10">
           {FULL_OPERATION.map((op, i) => (
             <ScrollReveal key={i} delay={i * 60}>
-              <div className="border-l-2 border-bordeaux/30 pl-8">
-                <h3 className="font-display text-xl font-light tracking-tight">
+              <div className="border-l-2 border-red/30 pl-8">
+                <h3 className="text-xl font-extrabold tracking-tight">
                   {op.name}
                 </h3>
-                <p className="mt-2 leading-relaxed text-dark/60">
+                <p className="mt-2 leading-relaxed text-ink/60">
                   {op.detail}
                 </p>
               </div>
@@ -154,7 +154,7 @@ export default function WhySinnyrPage() {
         <ScrollReveal>
           <div className="mb-16 text-center">
             <Eyebrow>The difference</Eyebrow>
-            <SectionHeading className="text-ivory">
+            <SectionHeading className="text-cream">
               How Sinnyr is built.
             </SectionHeading>
           </div>
@@ -164,12 +164,12 @@ export default function WhySinnyrPage() {
             <ScrollReveal key={i} delay={i * 60}>
               <div className="grid items-start gap-8 border-b border-white/10 pb-16 last:border-0 last:pb-0 lg:grid-cols-12">
                 <div className="lg:col-span-5">
-                  <h2 className="font-display text-2xl font-light tracking-tight text-ivory md:text-3xl">
+                  <h2 className="text-2xl font-extrabold tracking-tight text-cream md:text-3xl">
                     {reason.heading}
                   </h2>
                 </div>
                 <div className="lg:col-span-6 lg:col-start-7">
-                  <p className="text-lg leading-relaxed text-ivory/60">
+                  <p className="text-lg leading-relaxed text-cream/60">
                     {reason.body}
                   </p>
                 </div>
@@ -187,7 +187,7 @@ export default function WhySinnyrPage() {
               If this is the kind of management you have been looking for,
               apply.
             </SectionHeading>
-            <p className="mt-6 text-lg leading-relaxed text-dark/70">
+            <p className="mt-6 text-lg leading-relaxed text-ink/70">
               We review every application personally. If there is a fit, we will
               reach out to discuss what working together looks like. No
               pressure. No obligations. Just a real conversation.
@@ -195,7 +195,7 @@ export default function WhySinnyrPage() {
             <div className="mt-10">
               <Button href="/apply">Submit Your Application</Button>
             </div>
-            <p className="mt-4 text-sm text-dark/40">
+            <p className="mt-4 text-sm text-ink/40">
               Sinnyr creates accounts by invitation only. Most applicants are
               not a fit.
             </p>

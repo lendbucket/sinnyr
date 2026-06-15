@@ -21,7 +21,7 @@ export default function Article() {
         subscribes: pay-per-view messages, tips, and direct messaging.
       </p>
 
-      <h2 className="mt-10 font-display text-2xl font-light text-dark">
+      <h2 className="mt-10 text-2xl font-extrabold text-ink">
         How pay-per-view works
       </h2>
       <p>
@@ -42,7 +42,7 @@ export default function Article() {
         undervalue the content.
       </p>
 
-      <h2 className="mt-10 font-display text-2xl font-light text-dark">
+      <h2 className="mt-10 text-2xl font-extrabold text-ink">
         The messaging layer
       </h2>
       <p>
@@ -60,7 +60,7 @@ export default function Article() {
         boundaries around what is offered and at what price.
       </p>
 
-      <h2 className="mt-10 font-display text-2xl font-light text-dark">
+      <h2 className="mt-10 text-2xl font-extrabold text-ink">
         Pricing strategy
       </h2>
       <p>
@@ -78,7 +78,7 @@ export default function Article() {
         aligned with a revenue strategy, not picked randomly.
       </p>
 
-      <h2 className="mt-10 font-display text-2xl font-light text-dark">
+      <h2 className="mt-10 text-2xl font-extrabold text-ink">
         Why this is a management problem
       </h2>
       <p>
@@ -86,7 +86,7 @@ export default function Article() {
         revenue-critical part of the business. It is also the part most
         creators either skip or burn out on. Running this at a professional
         level, with strategy, consistency, and scale, is a core part of what{" "}
-        <Link href="/method" className="text-bordeaux hover:underline">
+        <Link href="/method" className="text-red hover:underline">
           The Sinnyr Method
         </Link>{" "}
         delivers under Conversion. The system handles the messaging strategy,

@@ -12,21 +12,21 @@ export default function PrivacyPage() {
   return (
     <>
       <Header />
-      <main className="bg-ivory px-6 pt-32 pb-20 md:pt-40 lg:px-8">
+      <main className="bg-cream px-6 pt-32 pb-20 md:pt-40 lg:px-8">
         <article className="prose-custom mx-auto max-w-3xl">
           <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted">
             Legal
           </p>
-          <h1 className="mt-4 font-display text-4xl font-light tracking-tight md:text-5xl">
+          <h1 className="mt-4 text-4xl font-extrabold tracking-tight md:text-5xl">
             Privacy Policy
           </h1>
-          <p className="mt-4 text-sm text-dark/50">
+          <p className="mt-4 text-sm text-ink/50">
             Last updated: June 2026
           </p>
 
-          <div className="mt-12 space-y-8 text-dark/70 leading-relaxed">
+          <div className="mt-12 space-y-8 text-ink/70 leading-relaxed">
             <section>
-              <h2 className="font-display text-2xl font-light text-dark">
+              <h2 className="text-2xl font-extrabold text-ink">
                 Information We Collect
               </h2>
               <p className="mt-4">
@@ -46,7 +46,7 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2 className="font-display text-2xl font-light text-dark">
+              <h2 className="text-2xl font-extrabold text-ink">
                 How We Use Your Information
               </h2>
               <p className="mt-4">
@@ -60,7 +60,7 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2 className="font-display text-2xl font-light text-dark">
+              <h2 className="text-2xl font-extrabold text-ink">
                 Service Providers
               </h2>
               <p className="mt-4">
@@ -82,7 +82,7 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2 className="font-display text-2xl font-light text-dark">
+              <h2 className="text-2xl font-extrabold text-ink">
                 Cookies
               </h2>
               <p className="mt-4">
@@ -93,7 +93,7 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2 className="font-display text-2xl font-light text-dark">
+              <h2 className="text-2xl font-extrabold text-ink">
                 Data Retention
               </h2>
               <p className="mt-4">
@@ -105,7 +105,7 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2 className="font-display text-2xl font-light text-dark">
+              <h2 className="text-2xl font-extrabold text-ink">
                 Your Rights
               </h2>
               <p className="mt-4">
@@ -122,7 +122,7 @@ export default function PrivacyPage() {
                 To exercise any of these rights, contact us at{" "}
                 <a
                   href={`mailto:${SITE.contact.email}`}
-                  className="text-bordeaux hover:underline"
+                  className="text-red hover:underline"
                 >
                   {SITE.contact.email}
                 </a>
@@ -131,7 +131,7 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2 className="font-display text-2xl font-light text-dark">
+              <h2 className="text-2xl font-extrabold text-ink">
                 Children's Privacy
               </h2>
               <p className="mt-4">
@@ -143,7 +143,7 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2 className="font-display text-2xl font-light text-dark">
+              <h2 className="text-2xl font-extrabold text-ink">
                 Changes to This Policy
               </h2>
               <p className="mt-4">
@@ -154,7 +154,7 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2 className="font-display text-2xl font-light text-dark">
+              <h2 className="text-2xl font-extrabold text-ink">
                 Contact
               </h2>
               <p className="mt-4">
@@ -162,7 +162,7 @@ export default function PrivacyPage() {
                 at{" "}
                 <a
                   href={`mailto:${SITE.contact.email}`}
-                  className="text-bordeaux hover:underline"
+                  className="text-red hover:underline"
                 >
                   {SITE.contact.email}
                 </a>
@@ -170,7 +170,7 @@ export default function PrivacyPage() {
               </p>
             </section>
 
-            <p className="mt-8 text-sm text-dark/40">
+            <p className="mt-8 text-sm text-ink/40">
               This privacy policy should be reviewed by a qualified attorney for
               your specific jurisdiction before relying on it as legal
               compliance.

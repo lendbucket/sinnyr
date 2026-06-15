@@ -19,7 +19,7 @@ export default function Article() {
         major platform.
       </p>
 
-      <h2 className="mt-10 font-display text-2xl font-light text-dark">
+      <h2 className="mt-10 text-2xl font-extrabold text-ink">
         Reddit
       </h2>
       <p>
@@ -38,7 +38,7 @@ export default function Article() {
         risk.
       </p>
 
-      <h2 className="mt-10 font-display text-2xl font-light text-dark">
+      <h2 className="mt-10 text-2xl font-extrabold text-ink">
         X (Twitter)
       </h2>
       <p>
@@ -50,7 +50,7 @@ export default function Article() {
         share or reply to.
       </p>
 
-      <h2 className="mt-10 font-display text-2xl font-light text-dark">
+      <h2 className="mt-10 text-2xl font-extrabold text-ink">
         TikTok
       </h2>
       <p>
@@ -64,7 +64,7 @@ export default function Article() {
         management.
       </p>
 
-      <h2 className="mt-10 font-display text-2xl font-light text-dark">
+      <h2 className="mt-10 text-2xl font-extrabold text-ink">
         Instagram
       </h2>
       <p>
@@ -77,7 +77,7 @@ export default function Article() {
         so the content line has to be managed carefully.
       </p>
 
-      <h2 className="mt-10 font-display text-2xl font-light text-dark">
+      <h2 className="mt-10 text-2xl font-extrabold text-ink">
         The operational weight of doing this right
       </h2>
       <p>
@@ -90,7 +90,7 @@ export default function Article() {
       </p>
       <p>
         This is a significant part of what{" "}
-        <Link href="/method" className="text-bordeaux hover:underline">
+        <Link href="/method" className="text-red hover:underline">
           The Sinnyr Method
         </Link>{" "}
         covers under Distribution: a managed, rules-respecting posting

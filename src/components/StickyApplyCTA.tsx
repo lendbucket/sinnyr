@@ -7,10 +7,6 @@ export default function StickyApplyCTA() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const prefersReduced = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
-
     const onScroll = () => {
       setVisible(window.scrollY > 600);
     };
@@ -30,7 +26,7 @@ export default function StickyApplyCTA() {
     >
       <Link
         href="/apply"
-        className="flex h-14 items-center gap-3 border border-bordeaux bg-bordeaux px-6 text-sm font-medium uppercase tracking-widest text-white shadow-lg transition-colors hover:bg-dark hover:border-dark"
+        className="flex h-14 items-center rounded bg-red px-6 text-sm font-semibold uppercase tracking-widest text-white shadow-lg transition-colors hover:bg-red-hover"
       >
         Apply
       </Link>

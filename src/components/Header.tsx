@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { NAV, SITE } from "@/lib/constants";
 
@@ -20,33 +21,51 @@ export default function Header({ transparent = false }: { transparent?: boolean 
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
-        solid ? "bg-dark" : "bg-transparent"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        solid ? "bg-cream shadow-sm" : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:px-8">
         <Link
           href="/"
-          className="font-display text-xl tracking-tight text-ivory"
+          className="relative flex items-center"
           onClick={() => setMenuOpen(false)}
         >
-          {SITE.name}
+          {/* Cream logo on dark hero, red logo on solid cream header */}
+          <Image
+            src={solid ? "/sinnyr-logo.png" : "/sinnyr-logo-cream.png"}
+            alt={`${SITE.name} logo`}
+            width={120}
+            height={40}
+            priority
+            className="h-8 w-auto lg:h-9"
+          />
+          {/* Fallback wordmark if images are missing */}
+          <noscript>
+            <span className="text-xl font-extrabold tracking-tight">
+              {SITE.name}
+            </span>
+          </noscript>
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden items-center gap-8 lg:flex">
+        <div className="hidden items-center gap-7 lg:flex">
           {NAV.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm tracking-wide text-ivory/70 transition-colors hover:text-ivory"
+              className={`text-sm font-medium transition-colors ${
+                solid
+                  ? "text-ink/70 hover:text-ink"
+                  : "text-cream/70 hover:text-cream"
+              }`}
             >
               {item.label}
             </Link>
           ))}
           <Link
             href="/apply"
-            className="border border-bordeaux bg-bordeaux px-6 py-2 text-sm font-medium uppercase tracking-widest text-white transition-colors hover:bg-transparent hover:text-bordeaux"
+            className="rounded bg-red px-5 py-2 text-sm font-semibold uppercase tracking-widest text-white transition-colors hover:bg-red-hover"
           >
             Apply
           </Link>
@@ -62,19 +81,19 @@ export default function Header({ transparent = false }: { transparent?: boolean 
         >
           <div className="relative h-5 w-6">
             <span
-              className={`absolute left-0 block h-px w-6 bg-ivory transition-all duration-300 ${
-                menuOpen ? "top-2.5 rotate-45" : "top-0"
-              }`}
+              className={`absolute left-0 block h-0.5 w-6 transition-all duration-300 ${
+                solid ? "bg-ink" : "bg-cream"
+              } ${menuOpen ? "top-2.5 rotate-45 !bg-cream" : "top-0"}`}
             />
             <span
-              className={`absolute left-0 top-2.5 block h-px w-6 bg-ivory transition-opacity duration-300 ${
-                menuOpen ? "opacity-0" : "opacity-100"
-              }`}
+              className={`absolute left-0 top-2.5 block h-0.5 w-6 transition-opacity duration-300 ${
+                solid ? "bg-ink" : "bg-cream"
+              } ${menuOpen ? "opacity-0" : "opacity-100"}`}
             />
             <span
-              className={`absolute left-0 block h-px w-6 bg-ivory transition-all duration-300 ${
-                menuOpen ? "top-2.5 -rotate-45" : "top-5"
-              }`}
+              className={`absolute left-0 block h-0.5 w-6 transition-all duration-300 ${
+                solid ? "bg-ink" : "bg-cream"
+              } ${menuOpen ? "top-2.5 -rotate-45 !bg-cream" : "top-5"}`}
             />
           </div>
         </button>
@@ -82,7 +101,7 @@ export default function Header({ transparent = false }: { transparent?: boolean 
 
       {/* Full screen mobile menu */}
       <div
-        className={`fixed inset-0 top-0 z-40 bg-dark transition-transform duration-500 ease-in-out lg:hidden ${
+        className={`fixed inset-0 top-0 z-40 bg-ink transition-transform duration-500 ease-in-out lg:hidden ${
           menuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -93,7 +112,7 @@ export default function Header({ transparent = false }: { transparent?: boolean 
                 key={item.href}
                 href={item.href}
                 onClick={() => setMenuOpen(false)}
-                className="border-b border-white/10 py-5 font-display text-2xl text-ivory transition-colors hover:text-bordeaux"
+                className="border-b border-white/10 py-5 text-2xl font-bold text-cream transition-colors hover:text-red"
               >
                 {item.label}
               </Link>
@@ -103,7 +122,7 @@ export default function Header({ transparent = false }: { transparent?: boolean 
             <Link
               href="/apply"
               onClick={() => setMenuOpen(false)}
-              className="inline-block w-full border border-bordeaux bg-bordeaux py-4 text-center text-sm font-medium uppercase tracking-widest text-white transition-colors hover:bg-transparent hover:text-bordeaux"
+              className="inline-block w-full rounded bg-red py-4 text-center text-sm font-semibold uppercase tracking-widest text-white transition-colors hover:bg-red-hover"
             >
               Apply Now
             </Link>

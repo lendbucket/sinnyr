@@ -17,14 +17,14 @@ function FAQItem({
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="border-b border-dark/10">
+    <div className="border-b border-ink/10">
       <button
         type="button"
         onClick={() => setOpen(!open)}
         className="flex w-full items-start justify-between gap-4 py-6 text-left"
         aria-expanded={open}
       >
-        <span className="font-display text-lg font-light tracking-tight md:text-xl">
+        <span className="text-lg font-extrabold tracking-tight md:text-xl">
           {question}
         </span>
         <span
@@ -39,7 +39,7 @@ function FAQItem({
           open ? "max-h-96 pb-6" : "max-h-0"
         }`}
       >
-        <p className="leading-relaxed text-dark/60">{answer}</p>
+        <p className="leading-relaxed text-ink/60">{answer}</p>
       </div>
     </div>
   );
@@ -50,15 +50,15 @@ export default function FAQPage() {
     <>
       <Header />
 
-      <section className="bg-dark px-6 pt-32 pb-20 md:pt-40 md:pb-28 lg:px-8">
+      <section className="bg-ink px-6 pt-32 pb-20 md:pt-40 md:pb-28 lg:px-8">
         <div className="mx-auto max-w-7xl text-center">
           <p className="text-xs font-medium uppercase tracking-[0.3em] text-muted">
             Questions
           </p>
-          <h1 className="mt-6 font-display text-4xl font-light tracking-tight text-ivory sm:text-5xl md:text-6xl lg:text-7xl">
+          <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-cream sm:text-5xl md:text-6xl lg:text-7xl">
             Frequently Asked Questions
           </h1>
-          <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-ivory/60">
+          <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-cream/60">
             Honest answers about how Sinnyr works, what it costs, and what to
             expect. No vague language, no hidden details.
           </p>
@@ -79,10 +79,10 @@ export default function FAQPage() {
 
       <Section dark>
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="font-display text-3xl font-light tracking-tight text-ivory md:text-4xl">
+          <h2 className="text-3xl font-extrabold tracking-tight text-cream md:text-4xl">
             Still have questions?
           </h2>
-          <p className="mt-6 text-lg text-ivory/60">
+          <p className="mt-6 text-lg text-cream/60">
             Start with an application. We will answer everything in the
             conversation that follows.
           </p>

@@ -74,13 +74,13 @@ export default function WhatYouGetPage() {
       <StickyApplyCTA />
 
       {/* Hero */}
-      <section className="bg-dark px-6 pt-32 pb-20 md:pt-40 md:pb-28 lg:px-8">
+      <section className="bg-ink px-6 pt-32 pb-20 md:pt-40 md:pb-28 lg:px-8">
         <div className="mx-auto max-w-7xl text-center">
           <Eyebrow>Deliverables</Eyebrow>
-          <h1 className="mt-6 font-display text-4xl font-light tracking-tight text-ivory sm:text-5xl md:text-6xl lg:text-7xl">
+          <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-cream sm:text-5xl md:text-6xl lg:text-7xl">
             What You Get
           </h1>
-          <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-ivory/60">
+          <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-cream/60">
             This is not a list of vague promises. These are the concrete
             deliverables every managed creator receives. Each one represents real
             work done by a real team, every day.
@@ -90,13 +90,13 @@ export default function WhatYouGetPage() {
 
       {/* Services grid */}
       <Section>
-        <div className="grid gap-px border border-dark/10 bg-dark/10 md:grid-cols-2">
+        <div className="grid gap-px border border-ink/10 bg-ink/10 md:grid-cols-2">
           {SERVICES.map((service) => (
-            <div key={service.name} className="bg-ivory p-8 lg:p-10">
-              <h2 className="font-display text-xl font-light tracking-tight md:text-2xl">
+            <div key={service.name} className="bg-cream p-8 lg:p-10">
+              <h2 className="text-xl font-extrabold tracking-tight md:text-2xl">
                 {service.name}
               </h2>
-              <p className="mt-4 leading-relaxed text-dark/60">
+              <p className="mt-4 leading-relaxed text-ink/60">
                 {service.description}
               </p>
             </div>
@@ -108,19 +108,19 @@ export default function WhatYouGetPage() {
       <Section dark>
         <div className="mx-auto max-w-3xl text-center">
           <Eyebrow>Pricing</Eyebrow>
-          <SectionHeading className="text-ivory">
+          <SectionHeading className="text-cream">
             One fee. Fully aligned.
           </SectionHeading>
           <p className="mx-auto mt-8 max-w-xl">
-            <span className="block font-display text-4xl font-light text-ivory md:text-5xl">
+            <span className="block text-4xl font-extrabold text-cream md:text-5xl">
               {FEE.percentage}%
             </span>
-            <span className="mt-2 block text-sm text-ivory/50">
+            <span className="mt-2 block text-sm text-cream/50">
               of your earnings, or ${FEE.minimumMonthly}/month, whichever is
               greater
             </span>
           </p>
-          <p className="mt-8 text-lg leading-relaxed text-ivory/60">
+          <p className="mt-8 text-lg leading-relaxed text-cream/60">
             No setup fees. No lock-in contracts with hidden penalties. We earn
             when you earn. The percentage model means our incentive is to grow
             your income, not to collect a flat fee regardless of whether the work
@@ -135,7 +135,7 @@ export default function WhatYouGetPage() {
           <SectionHeading>
             This is the work. Now see if you qualify.
           </SectionHeading>
-          <p className="mt-6 text-lg leading-relaxed text-dark/70">
+          <p className="mt-6 text-lg leading-relaxed text-ink/70">
             Every deliverable listed above is part of the daily operation for
             every creator we manage. If you want this level of support behind
             your business, the next step is an application.

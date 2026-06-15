@@ -15,12 +15,12 @@ export default function Button({
   className = "",
 }: ButtonProps) {
   const base =
-    "inline-block px-8 py-3.5 text-sm font-medium uppercase tracking-widest transition-colors text-center";
+    "inline-block rounded px-8 py-3.5 text-sm font-semibold uppercase tracking-widest transition-all text-center";
   const variants = {
     primary:
-      "border border-bordeaux bg-bordeaux text-white hover:bg-transparent hover:text-bordeaux",
+      "bg-red text-white hover:bg-red-hover shadow-sm hover:shadow-md active:bg-red-hover",
     outline:
-      "border border-dark text-dark hover:bg-dark hover:text-ivory",
+      "border border-ink text-ink hover:bg-ink hover:text-cream",
   };
 
   return (

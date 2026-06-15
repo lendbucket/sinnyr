@@ -29,8 +29,11 @@ export const NAV = [
 ] as const;
 
 export const COLORS = {
-  ivory: "#F6F2EC",
-  dark: "#14110F",
-  bordeaux: "#6B2737",
-  muted: "#B7ADA1",
+  cream: "#FAF4E8",
+  creamAlt: "#F3EAD8",
+  ink: "#15110D",
+  red: "#ED2100",
+  redHover: "#C71C00",
+  muted: "#6E665C",
+  hairline: "#E5DCCB",
 } as const;
