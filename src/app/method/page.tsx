@@ -3,6 +3,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Section, { Eyebrow, SectionHeading } from "@/components/Section";
 import Button from "@/components/Button";
+import ScrollReveal from "@/components/ScrollReveal";
+import StickyApplyCTA from "@/components/StickyApplyCTA";
+import PullQuote from "@/components/PullQuote";
 import { BreadcrumbSchema, ServiceSchema } from "@/components/SchemaOrg";
 import { METHOD_STEPS } from "@/data/method";
 
@@ -29,14 +32,15 @@ const GAP_FIX = [
       "An orchestrated, platform-compliant distribution operation managed by a dedicated team.",
   },
   {
-    alone: "Growing followers but not subscribers, and not understanding why.",
+    alone:
+      "Growing followers but not subscribers, and not understanding where the revenue is leaking.",
     managed:
-      "A conversion funnel with messaging, DM strategy, and an offer stack designed to turn attention into income.",
+      "A conversion funnel with messaging, DM strategy, PPV sequencing, and an offer stack designed to turn attention into income.",
   },
   {
     alone: "No idea what is working, what to change, or what to do tomorrow.",
     managed:
-      "A daily action plan built from your analytics, delivered to you every morning.",
+      "A daily action plan built from your analytics, delivered to you every morning through your private portal.",
   },
 ];
 
@@ -54,6 +58,7 @@ export default function MethodPage() {
         description="Six-component creator management system: Selection, Positioning, Content Engine, Distribution, Conversion, and Daily Signal analytics."
       />
       <Header />
+      <StickyApplyCTA />
 
       {/* Hero */}
       <section className="bg-dark px-6 pt-32 pb-20 md:pt-40 md:pb-28 lg:px-8">
@@ -64,105 +69,122 @@ export default function MethodPage() {
           </h1>
           <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-ivory/60">
             The Sinnyr Method is the operating system behind every creator we
-            manage. It is six components, each designed to do work that a creator
-            cannot do alone, connected into a single daily operation. There is no
-            invented science here. Each component exists because it solves a real
-            problem, and each one is explained honestly for what it does and why
-            it matters.
+            manage. Six components, each designed to do work that a creator
+            cannot do alone, connected into a single daily operation. There is
+            no invented science. Each component exists because it solves a real
+            problem, and each one is explained honestly below.
           </p>
         </div>
       </section>
 
       {/* Six components */}
       <Section>
-        <div className="space-y-20">
+        <div className="space-y-24">
           {METHOD_STEPS.map((step, i) => (
-            <div
-              key={step.number}
-              className={`grid items-start gap-12 lg:grid-cols-12 ${
-                i % 2 === 1 ? "lg:flex-row-reverse" : ""
-              }`}
-            >
+            <ScrollReveal key={step.number}>
               <div
-                className={`lg:col-span-4 ${
-                  i % 2 === 1 ? "lg:col-start-9" : ""
+                className={`grid items-start gap-12 lg:grid-cols-12 ${
+                  i % 2 === 1 ? "lg:flex-row-reverse" : ""
                 }`}
               >
-                <p className="font-display text-6xl font-light text-bordeaux/20">
-                  {step.number}
-                </p>
+                <div
+                  className={`lg:col-span-3 ${
+                    i % 2 === 1 ? "lg:col-start-10" : ""
+                  }`}
+                >
+                  <p className="font-display text-8xl font-light text-bordeaux/15 md:text-9xl">
+                    {step.number}
+                  </p>
+                </div>
+                <div
+                  className={`lg:col-span-8 ${
+                    i % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""
+                  }`}
+                >
+                  <h2 className="font-display text-3xl font-light tracking-tight md:text-4xl">
+                    {step.name}
+                  </h2>
+                  <p className="mt-2 text-sm font-medium uppercase tracking-widest text-muted">
+                    {step.short}
+                  </p>
+                  <p className="mt-6 text-lg leading-relaxed text-dark/70">
+                    {step.description}
+                  </p>
+                </div>
               </div>
-              <div
-                className={`lg:col-span-7 ${
-                  i % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""
-                }`}
-              >
-                <h2 className="font-display text-3xl font-light tracking-tight md:text-4xl">
-                  {step.name}
-                </h2>
-                <p className="mt-2 text-sm font-medium uppercase tracking-widest text-muted">
-                  {step.short}
-                </p>
-                <p className="mt-6 text-lg leading-relaxed text-dark/70">
-                  {step.description}
-                </p>
-              </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </Section>
 
-      {/* Gap and fix */}
+      {/* Pull quote divider */}
       <Section dark>
-        <div className="text-center">
-          <Eyebrow>The difference</Eyebrow>
-          <SectionHeading className="text-ivory">
-            Alone versus managed.
-          </SectionHeading>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-ivory/60">
-            These are not hypothetical scenarios. They are the daily reality of
-            creators who are trying to build a business without a system behind
-            them.
-          </p>
-        </div>
-        <div className="mt-16 space-y-px">
+        <ScrollReveal>
+          <div className="mx-auto max-w-3xl text-center">
+            <PullQuote dark>
+              The agencies you tried were never built for you to win. They were
+              built to take a cut of whatever happened to come in.
+            </PullQuote>
+          </div>
+        </ScrollReveal>
+      </Section>
+
+      {/* Gap and fix */}
+      <Section>
+        <ScrollReveal>
+          <div className="text-center">
+            <Eyebrow>The difference</Eyebrow>
+            <SectionHeading>Alone versus managed.</SectionHeading>
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-dark/70">
+              These are not hypothetical scenarios. They are the daily reality of
+              creators who are trying to build a business without a system behind
+              them.
+            </p>
+          </div>
+        </ScrollReveal>
+        <div className="mt-16 space-y-6">
           {GAP_FIX.map((row, i) => (
-            <div
-              key={i}
-              className="grid gap-px bg-white/10 md:grid-cols-2"
-            >
-              <div className="bg-dark p-8">
-                <p className="text-xs font-medium uppercase tracking-widest text-ivory/30">
-                  On your own
-                </p>
-                <p className="mt-3 text-ivory/60">{row.alone}</p>
+            <ScrollReveal key={i} delay={i * 80}>
+              <div className="grid gap-px border border-dark/10 bg-dark/10 md:grid-cols-2">
+                <div className="bg-ivory p-8">
+                  <p className="text-xs font-medium uppercase tracking-widest text-dark/30">
+                    On your own
+                  </p>
+                  <p className="mt-3 text-dark/60">{row.alone}</p>
+                </div>
+                <div className="bg-dark p-8">
+                  <p className="text-xs font-medium uppercase tracking-widest text-bordeaux">
+                    With Sinnyr
+                  </p>
+                  <p className="mt-3 text-ivory/80">{row.managed}</p>
+                </div>
               </div>
-              <div className="bg-dark p-8">
-                <p className="text-xs font-medium uppercase tracking-widest text-bordeaux">
-                  With Sinnyr
-                </p>
-                <p className="mt-3 text-ivory/80">{row.managed}</p>
-              </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </Section>
 
       {/* CTA */}
-      <Section>
-        <div className="mx-auto max-w-3xl text-center">
-          <SectionHeading>
-            The method works when the creator is right.
-          </SectionHeading>
-          <p className="mt-6 text-lg leading-relaxed text-dark/70">
-            We do not take everyone, because the system requires commitment from
-            both sides. If you are serious about treating your content as a
-            business, start with an application.
-          </p>
-          <div className="mt-10">
-            <Button href="/apply">Apply to Sinnyr</Button>
+      <Section dark>
+        <ScrollReveal>
+          <div className="mx-auto max-w-3xl text-center">
+            <SectionHeading className="text-ivory">
+              The method works when the creator is right.
+            </SectionHeading>
+            <p className="mt-6 text-lg leading-relaxed text-ivory/60">
+              We do not take everyone, because the system requires commitment
+              from both sides. If you are serious about treating your content as
+              a business, start with an application.
+            </p>
+            <div className="mt-10">
+              <Button href="/apply">Apply to Sinnyr</Button>
+            </div>
+            <p className="mt-4 text-sm text-ivory/40">
+              Sinnyr creates accounts by invitation only. Most applicants are
+              not a fit.
+            </p>
           </div>
-        </div>
+        </ScrollReveal>
       </Section>
 
       <Footer />

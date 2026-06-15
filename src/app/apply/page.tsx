@@ -136,9 +136,11 @@ export default function ApplyPage() {
             <h1 className="mt-6 font-display text-4xl font-light tracking-tight text-ivory sm:text-5xl">
               Apply to Sinnyr
             </h1>
-            <p className="mt-4 text-ivory/50">
+            <p className="mt-4 max-w-lg mx-auto text-ivory/50">
               This is an application, not a signup. Sinnyr selects creators and
-              creates accounts by invitation only.
+              creates accounts by invitation only. We run a capped roster. Most
+              applicants are not a fit. Applying starts a conversation and an
+              evaluation, not an enrollment.
             </p>
           </div>
 

@@ -24,6 +24,7 @@ export const NAV = [
   { label: "The Path", href: "/the-path" },
   { label: "What You Get", href: "/what-you-get" },
   { label: "Why Sinnyr", href: "/why-sinnyr" },
+  { label: "Insights", href: "/insights" },
   { label: "FAQ", href: "/faq" },
 ] as const;
 

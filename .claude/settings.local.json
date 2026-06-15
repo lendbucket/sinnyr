@@ -1,7 +1,21 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npx create-next-app@latest:*)"
+      "Bash(npx create-next-app@latest:*)",
+      "Bash(npm run:*)",
+      "Bash(gh auth:*)",
+      "Bash(gh repo:*)",
+      "Bash(git remote:*)",
+      "Bash(git branch:*)",
+      "Bash(git add:*)",
+      "Bash(git rm:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(gh api:*)",
+      "WebFetch(domain:sinnyrmodels.com)",
+      "Bash(npx vercel:*)",
+      "WebFetch(domain:sinnyr-akwfnoeja-salon-envy.vercel.app)",
+      "Bash(curl:*)"
     ]
   }
 }

@@ -3,6 +3,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Section, { Eyebrow, SectionHeading } from "@/components/Section";
 import Button from "@/components/Button";
+import ScrollReveal from "@/components/ScrollReveal";
+import StickyApplyCTA from "@/components/StickyApplyCTA";
 import { BreadcrumbSchema, ServiceSchema } from "@/components/SchemaOrg";
 import { FEE } from "@/lib/constants";
 
@@ -69,6 +71,7 @@ export default function WhatYouGetPage() {
         description="Full-service creator management including platform audit, content engine, daily distribution, conversion strategy, and personalized analytics."
       />
       <Header />
+      <StickyApplyCTA />
 
       {/* Hero */}
       <section className="bg-dark px-6 pt-32 pb-20 md:pt-40 md:pb-28 lg:px-8">

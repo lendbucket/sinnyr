@@ -7,6 +7,7 @@ const FOOTER_LINKS = [
     links: [
       { label: "About", href: "/about" },
       { label: "Why Sinnyr", href: "/why-sinnyr" },
+      { label: "Insights", href: "/insights" },
       { label: "FAQ", href: "/faq" },
     ],
   },
