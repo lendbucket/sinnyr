@@ -10,7 +10,15 @@ export const metadata: Metadata = {
 
 export default function Article() {
   return (
-    <ArticleLayout slug="follower-to-subscriber-funnel">
+    <ArticleLayout
+      slug="follower-to-subscriber-funnel"
+      takeaways={[
+        "The funnel has four stages: Awareness, Interest, Click, Subscribe. Each one leaks differently.",
+        "The biggest leak is usually between Interest and Click: a broken bridge from free profile to paid page.",
+        "The second biggest leak is at Subscribe: wrong pricing, no preview content, no reason to commit.",
+        "Funnel optimization is analytical and operational work, not creative work.",
+      ]}
+    >
       <p>
         Growing a following is one problem. Turning that following into paying
         subscribers is a completely different problem. Most creators focus on the

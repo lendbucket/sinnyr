@@ -25,7 +25,7 @@ export default function Header({ transparent = false }: { transparent?: boolean 
         solid ? "bg-cream shadow-sm" : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center px-6 py-4 lg:justify-between lg:px-8 lg:py-3">
+      <nav className="mx-auto flex max-w-7xl items-center px-6 py-3 lg:justify-between lg:px-8 lg:py-4">
         {/* Mobile: invisible spacer to balance the menu button so logo centers */}
         <div className="w-11 lg:hidden" aria-hidden="true" />
 
@@ -38,10 +38,10 @@ export default function Header({ transparent = false }: { transparent?: boolean 
           <Image
             src={solid ? "/sinnyr-logo.png" : "/sinnyr-logo-cream.png"}
             alt={`${SITE.name} logo`}
-            width={280}
-            height={168}
+            width={400}
+            height={240}
             priority
-            className="h-10 w-auto lg:h-14"
+            className="h-[52px] w-auto lg:h-[76px]"
           />
           <noscript>
             <span className="text-xl font-extrabold tracking-tight">

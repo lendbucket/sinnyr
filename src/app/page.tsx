@@ -35,10 +35,10 @@ export default function Home() {
       {/* Hero */}
       <section className="relative flex min-h-screen flex-col items-center justify-center bg-ink px-6 text-center">
         <div className="relative z-10 max-w-5xl">
-          <p className="text-xs font-medium uppercase tracking-[0.3em] text-red">
-            Application Only
-          </p>
-          <h1 className="mt-8 text-[clamp(2.5rem,7vw,6rem)] font-extrabold leading-[1.05] tracking-tight text-cream">
+          <span className="inline-block border border-red/60 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.25em] text-red">
+            By Application Only
+          </span>
+          <h1 className="mt-5 text-[clamp(2.5rem,7vw,6rem)] font-extrabold leading-[1.05] tracking-tight text-cream">
             OnlyFans Management
             <br />
             <span className="text-red">Agency</span>

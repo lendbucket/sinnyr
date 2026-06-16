@@ -10,7 +10,15 @@ export const metadata: Metadata = {
 
 export default function Article() {
   return (
-    <ArticleLayout slug="how-onlyfans-growth-works">
+    <ArticleLayout
+      slug="how-onlyfans-growth-works"
+      takeaways={[
+        "OnlyFans has no discovery algorithm. Every subscriber finds you on another platform first.",
+        "All growth is external: Reddit, X, TikTok, Instagram, and direct referrals.",
+        "Your OnlyFans page must convert visitors in seconds, because every one was sent there deliberately.",
+        "Positioning comes before distribution. Sending traffic to an unoptimized page wastes the work.",
+      ]}
+    >
       <p>
         The single most important thing to understand about OnlyFans is this: it
         has no native discovery mechanism. There is no algorithm pushing your

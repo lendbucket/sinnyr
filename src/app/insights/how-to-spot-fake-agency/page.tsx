@@ -10,7 +10,15 @@ export const metadata: Metadata = {
 
 export default function Article() {
   return (
-    <ArticleLayout slug="how-to-spot-fake-agency">
+    <ArticleLayout
+      slug="how-to-spot-fake-agency"
+      takeaways={[
+        "No honest agency guarantees specific income figures or subscriber counts.",
+        "If there is no written management agreement, it is not management.",
+        "High upfront fees before any work is done signal misaligned incentives.",
+        "Ask any agency to describe their daily process. Vague answers mean no system.",
+      ]}
+    >
       <p>
         Before you hand over access to your accounts, your content, and your
         income to any agency, you should know what to look for. The creator

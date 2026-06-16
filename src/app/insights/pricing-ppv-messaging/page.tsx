@@ -10,7 +10,15 @@ export const metadata: Metadata = {
 
 export default function Article() {
   return (
-    <ArticleLayout slug="pricing-ppv-messaging">
+    <ArticleLayout
+      slug="pricing-ppv-messaging"
+      takeaways={[
+        "Subscription revenue is the foundation, not the majority. PPV, tips, and messaging drive real income.",
+        "A single PPV message can generate more than a full month of subscriptions.",
+        "Direct messaging is daily, labor-intensive sales work. Most creators skip it or burn out.",
+        "Pricing is a strategic decision with real trade-offs. There is no universal right answer.",
+      ]}
+    >
       <p>
         Most people outside the industry assume that creator income comes from
         subscriptions. A subscriber pays a monthly fee, and the creator earns

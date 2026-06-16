@@ -10,7 +10,15 @@ export const metadata: Metadata = {
 
 export default function Article() {
   return (
-    <ArticleLayout slug="platform-compliant-growth">
+    <ArticleLayout
+      slug="platform-compliant-growth"
+      takeaways={[
+        "Each platform has different rules, content standards, and ban triggers.",
+        "Reddit is effective but strict. Mass posting gets you shadowbanned.",
+        "TikTok builds awareness, not direct conversions. Bans are expected.",
+        "Compliant distribution across four platforms is a daily operation, not a weekly task.",
+      ]}
+    >
       <p>
         Every platform that drives traffic to OnlyFans has its own rules, its
         own culture, and its own ban triggers. The line between effective

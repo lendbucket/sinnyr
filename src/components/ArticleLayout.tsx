@@ -11,10 +11,11 @@ import { INSIGHTS } from "@/data/insights";
 
 type ArticleLayoutProps = {
   slug: string;
+  takeaways?: string[];
   children: ReactNode;
 };
 
-export default function ArticleLayout({ slug, children }: ArticleLayoutProps) {
+export default function ArticleLayout({ slug, takeaways, children }: ArticleLayoutProps) {
   const article = INSIGHTS.find((a) => a.slug === slug);
   const others = INSIGHTS.filter((a) => a.slug !== slug).slice(0, 3);
 
@@ -61,6 +62,22 @@ export default function ArticleLayout({ slug, children }: ArticleLayoutProps) {
           <p className="mt-4 text-sm text-muted">
             {article?.readTime} &middot; {article?.date}
           </p>
+
+          {takeaways && takeaways.length > 0 && (
+            <div className="mt-10 border border-ink/10 bg-cream-alt p-6 lg:p-8">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">
+                Key takeaways
+              </p>
+              <ul className="mt-4 space-y-3">
+                {takeaways.map((t) => (
+                  <li key={t} className="flex gap-3 text-ink/80">
+                    <span className="mt-2 block h-1.5 w-1.5 shrink-0 bg-red" />
+                    <span>{t}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           <div className="mt-12 space-y-6 text-lg leading-relaxed text-ink/70 [&_h2]:mt-10 [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-ink [&_h2]:tracking-tight">
             {children}

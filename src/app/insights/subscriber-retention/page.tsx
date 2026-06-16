@@ -10,7 +10,15 @@ export const metadata: Metadata = {
 
 export default function Article() {
   return (
-    <ArticleLayout slug="subscriber-retention">
+    <ArticleLayout
+      slug="subscriber-retention"
+      takeaways={[
+        "You can add subscribers every week and still stay flat if churn matches acquisition.",
+        "Subscribers leave for predictable reasons: mismatched expectations, low posting frequency, no engagement.",
+        "Retention requires consistent posting, varied content, personal messaging, and re-engagement campaigns.",
+        "Keeping an existing subscriber costs less effort than replacing a churned one.",
+      ]}
+    >
       <p>
         Every conversation about creator growth focuses on one thing: getting
         new subscribers. How to drive traffic, how to convert visitors, how to
