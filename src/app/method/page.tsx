@@ -77,6 +77,28 @@ export default function MethodPage() {
         </div>
       </section>
 
+      {/* Key takeaways */}
+      <Section>
+        <div className="mx-auto max-w-3xl border border-ink/10 bg-cream-alt p-6 lg:p-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">
+            Key takeaways
+          </p>
+          <ul className="mt-4 space-y-3">
+            {[
+              "Six components: Selection, Positioning, Content Engine, Distribution, Conversion, and Daily Signal.",
+              "Each component does daily operational work that a solo creator cannot sustain.",
+              "Positioning and funnel optimization happen before any traffic is sent.",
+              "The Daily Signal delivers a personalized analytics briefing every morning.",
+            ].map((t) => (
+              <li key={t} className="flex gap-3 text-ink/80">
+                <span className="mt-2 block h-1.5 w-1.5 shrink-0 bg-red" />
+                <span>{t}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Section>
+
       {/* Six components */}
       <Section>
         <div className="space-y-24">

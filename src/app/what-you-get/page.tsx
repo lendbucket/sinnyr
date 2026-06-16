@@ -88,6 +88,29 @@ export default function WhatYouGetPage() {
         </div>
       </section>
 
+      {/* Key takeaways */}
+      <Section>
+        <div className="mx-auto max-w-3xl border border-ink/10 bg-cream-alt p-6 lg:p-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">
+            Key takeaways
+          </p>
+          <ul className="mt-4 space-y-3">
+            {[
+              "Full platform audit, personalized strategy, and profile optimization before any traffic is sent.",
+              "One content session turned into a full week of distribution assets across every platform.",
+              "Daily multi-platform posting managed by a dedicated team, not a weekly check-in.",
+              "Personalized analytics briefing delivered every morning through your private portal.",
+              "12% of earnings or $99/month. No setup fees, no lock-in contracts.",
+            ].map((t) => (
+              <li key={t} className="flex gap-3 text-ink/80">
+                <span className="mt-2 block h-1.5 w-1.5 shrink-0 bg-red" />
+                <span>{t}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Section>
+
       {/* Services grid */}
       <Section>
         <div className="grid gap-px border border-ink/10 bg-ink/10 md:grid-cols-2">

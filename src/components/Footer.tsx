@@ -42,7 +42,7 @@ export default function Footer() {
                 alt={`${SITE.name} logo`}
                 width={400}
                 height={240}
-                className="h-11 w-auto lg:h-16"
+                className="h-12 w-auto lg:h-16"
               />
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-cream/50">

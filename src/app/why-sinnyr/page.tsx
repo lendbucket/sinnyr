@@ -109,6 +109,29 @@ export default function WhySinnyrPage() {
         </div>
       </section>
 
+      {/* Key takeaways */}
+      <Section>
+        <div className="mx-auto max-w-3xl border border-ink/10 bg-cream-alt p-6 lg:p-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">
+            Key takeaways
+          </p>
+          <ul className="mt-4 space-y-3">
+            {[
+              "Winning on OnlyFans requires a full daily operation: content, distribution, chat, sales, analytics, and compliance.",
+              "Sinnyr runs a capped roster so every creator gets the full operation and a dedicated team.",
+              "Real onboarding: signed agreement, identity verification, and a structured intake process.",
+              "The Sinnyr Method is a defined six-component system, not a person with a phone.",
+              "12% of earnings or $99/month. No upfront fees. The incentive is fully aligned.",
+            ].map((t) => (
+              <li key={t} className="flex gap-3 text-ink/80">
+                <span className="mt-2 block h-1.5 w-1.5 shrink-0 bg-red" />
+                <span>{t}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Section>
+
       {/* Full stakes: what winning requires */}
       <Section>
         <ScrollReveal>
