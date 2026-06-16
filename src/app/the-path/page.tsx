@@ -8,7 +8,7 @@ import StickyApplyCTA from "@/components/StickyApplyCTA";
 import { BreadcrumbSchema } from "@/components/SchemaOrg";
 
 export const metadata: Metadata = {
-  title: "The Path | Creator Onboarding Journey",
+  title: { absolute: "The Path: Creator Onboarding | Sinnyr" },
   description:
     "Four stages from application to growth. See exactly what Sinnyr delivers at each step of the creator management onboarding process.",
 };
@@ -95,9 +95,9 @@ export default function ThePathPage() {
             The Path
           </h1>
           <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-cream/60">
-            You do not get dropped into a queue and forgotten. You move through a
-            defined journey with clear stages, real deliverables, and visible
-            milestones. Here is exactly what that looks like.
+            You do not get dropped into a queue and forgotten. Onboarding at
+            Sinnyr is a defined journey with clear stages, real deliverables,
+            and visible milestones. Here is exactly what that looks like.
           </p>
         </div>
       </section>

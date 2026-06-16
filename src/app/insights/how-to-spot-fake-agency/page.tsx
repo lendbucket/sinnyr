@@ -3,7 +3,7 @@ import Link from "next/link";
 import ArticleLayout from "@/components/ArticleLayout";
 
 export const metadata: Metadata = {
-  title: "How to Spot a Fake or Extractive Agency",
+  title: { absolute: "How to Spot a Fake or Extractive Agency | Sinnyr" },
   description:
     "Before you hand over your account, know the red flags. Here are the questions to ask and the patterns that separate real management from a toll booth.",
 };

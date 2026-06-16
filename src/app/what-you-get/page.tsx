@@ -9,7 +9,7 @@ import { BreadcrumbSchema, ServiceSchema } from "@/components/SchemaOrg";
 import { FEE } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "What You Get | Content Creator Management",
+  title: { absolute: "What You Get: Management Deliverables | Sinnyr" },
   description:
     "The concrete deliverables of Sinnyr creator management: positioning, content production, daily distribution, conversion strategy, analytics, and a dedicated team.",
 };

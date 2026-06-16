@@ -3,7 +3,7 @@ import Link from "next/link";
 import ArticleLayout from "@/components/ArticleLayout";
 
 export const metadata: Metadata = {
-  title: "How Discovery and Growth Actually Work on OnlyFans",
+  title: { absolute: "How Growth Actually Works on OnlyFans | Sinnyr" },
   description:
     "OnlyFans has no native discovery algorithm. Growth comes from external traffic. Here is how the platform actually works and what that means for your strategy.",
 };

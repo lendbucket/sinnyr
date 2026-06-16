@@ -10,7 +10,7 @@ import { BreadcrumbSchema } from "@/components/SchemaOrg";
 import { INSIGHTS } from "@/data/insights";
 
 export const metadata: Metadata = {
-  title: "Insights | Creator Management Knowledge",
+  title: { absolute: "Insights: Strategy for Content Creators | Sinnyr" },
   description:
     "Real strategy and operations knowledge for adult content creators. Growth, funnels, pricing, retention, and how to spot a fake agency.",
 };

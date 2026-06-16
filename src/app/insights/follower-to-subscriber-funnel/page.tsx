@@ -3,7 +3,7 @@ import Link from "next/link";
 import ArticleLayout from "@/components/ArticleLayout";
 
 export const metadata: Metadata = {
-  title: "The Funnel from Free Follower to Paying Subscriber",
+  title: { absolute: "Follower to Subscriber Funnel | Sinnyr" },
   description:
     "Most creators grow followers but not subscribers. The gap is the funnel. Here is where revenue leaks and how to close each stage.",
 };

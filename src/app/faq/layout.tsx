@@ -3,7 +3,7 @@ import { BreadcrumbSchema, FAQPageSchema } from "@/components/SchemaOrg";
 import { FAQ_ITEMS } from "@/data/faq";
 
 export const metadata: Metadata = {
-  title: "Frequently Asked Questions | OnlyFans Agency",
+  title: { absolute: "Frequently Asked Questions | Sinnyr" },
   description:
     "Honest answers about Sinnyr creator management: fees, onboarding, platforms, deliverables, and how results are measured. No vague language.",
 };

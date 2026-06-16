@@ -100,10 +100,11 @@ export default function WhySinnyrPage() {
             Why Sinnyr
           </h1>
           <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-cream/60">
-            The top of this platform is not luck. It is an operation. Most
+            The top of OnlyFans is not luck. It is an operation. Most
             creators are running that operation alone, doing ten jobs, getting
             paid for one, and wondering why growth has stalled. Here is why it
-            matters who is behind you, and why Sinnyr is built differently.
+            matters who manages your OnlyFans, and why Sinnyr is built
+            differently.
           </p>
         </div>
       </section>
