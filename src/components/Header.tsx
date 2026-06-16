@@ -25,22 +25,24 @@ export default function Header({ transparent = false }: { transparent?: boolean 
         solid ? "bg-cream shadow-sm" : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:px-8">
+      <nav className="mx-auto flex max-w-7xl items-center px-6 py-4 lg:justify-between lg:px-8 lg:py-3">
+        {/* Mobile: invisible spacer to balance the menu button so logo centers */}
+        <div className="w-11 lg:hidden" aria-hidden="true" />
+
+        {/* Logo - centered on mobile, left on desktop */}
         <Link
           href="/"
-          className="relative flex items-center"
+          className="mx-auto flex items-center lg:mx-0"
           onClick={() => setMenuOpen(false)}
         >
-          {/* Cream logo on dark hero, red logo on solid cream header */}
           <Image
             src={solid ? "/sinnyr-logo.png" : "/sinnyr-logo-cream.png"}
             alt={`${SITE.name} logo`}
-            width={120}
-            height={40}
+            width={280}
+            height={168}
             priority
-            className="h-8 w-auto lg:h-9"
+            className="h-10 w-auto lg:h-14"
           />
-          {/* Fallback wordmark if images are missing */}
           <noscript>
             <span className="text-xl font-extrabold tracking-tight">
               {SITE.name}
@@ -105,7 +107,7 @@ export default function Header({ transparent = false }: { transparent?: boolean 
           menuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex h-full flex-col px-6 pt-20">
+        <div className="flex h-full flex-col px-6 pt-24">
           <div className="flex flex-col gap-1">
             {NAV.map((item) => (
               <Link

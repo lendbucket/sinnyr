@@ -40,9 +40,9 @@ export default function Footer() {
               <Image
                 src="/sinnyr-logo-cream.png"
                 alt={`${SITE.name} logo`}
-                width={120}
-                height={40}
-                className="h-8 w-auto"
+                width={280}
+                height={168}
+                className="h-10 w-auto lg:h-12"
               />
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-cream/50">
