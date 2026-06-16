@@ -10,7 +10,7 @@ import { BreadcrumbSchema, ServiceSchema } from "@/components/SchemaOrg";
 import { METHOD_STEPS } from "@/data/method";
 
 export const metadata: Metadata = {
-  title: "The Sinnyr Method | Creator Management System",
+  title: { absolute: "The Sinnyr Method | Creator Management System" },
   description:
     "Six components that define how Sinnyr manages creators as professional talent. Selection, positioning, content, distribution, conversion, and daily analytics.",
 };

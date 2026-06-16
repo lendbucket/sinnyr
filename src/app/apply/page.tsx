@@ -3,87 +3,427 @@
 import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { BreadcrumbSchema } from "@/components/SchemaOrg";
 
-const STEPS = [
-  { label: "Contact", fields: ["name", "email"] },
-  { label: "Your Business", fields: ["platforms", "subscriberCount", "revenueRange", "niche"] },
-  { label: "Your Work", fields: ["postingCadence", "socialHandles"] },
-  { label: "Your Goals", fields: ["goals", "whySinnyr"] },
+/* ------------------------------------------------------------------ */
+/*  Constants                                                          */
+/* ------------------------------------------------------------------ */
+
+const STEP_LABELS = [
+  "Start Here",
+  "Your Platforms",
+  "Where You Are Now",
+  "Your Goals",
+  "Why Sinnyr",
 ];
 
-const PLATFORM_OPTIONS = [
-  "OnlyFans",
+const CONTACT_METHODS = [
+  "Email",
+  "Instagram DM",
+  "Telegram",
+  "WhatsApp",
+  "Text message",
+];
+
+const CONTENT_PLATFORMS = [
   "Fansly",
-  "TikTok",
-  "Instagram",
-  "X (Twitter)",
-  "Reddit",
+  "Fanvue",
+  "JustForFans",
+  "ManyVids",
+  "LoyalFans",
+  "None yet",
   "Other",
 ];
 
-const REVENUE_RANGES = [
-  "Under $1,000/month",
-  "$1,000 to $5,000/month",
-  "$5,000 to $15,000/month",
-  "$15,000 to $50,000/month",
-  "Over $50,000/month",
-  "Prefer not to say",
+const FOLLOWER_RANGES = [
+  "Under 1k",
+  "1k to 10k",
+  "10k to 50k",
+  "50k to 250k",
+  "250k or more",
+];
+
+const EXPERIENCE_OPTIONS = [
+  "Just starting",
+  "Under 6 months",
+  "6 to 12 months",
+  "1 to 2 years",
+  "2 or more years",
+];
+
+const SUBSCRIBER_OPTIONS = [
+  "0",
+  "1 to 100",
+  "100 to 500",
+  "500 to 2,000",
+  "2,000 to 10,000",
+  "10,000 or more",
+];
+
+const EARNINGS_OPTIONS = [
+  "Just starting",
+  "Under $1k",
+  "$1k to $5k",
+  "$5k to $15k",
+  "$15k to $50k",
+  "$50k or more",
 ];
 
 const CADENCE_OPTIONS = [
   "Daily",
-  "Several times per week",
-  "A few times per month",
-  "Inconsistently",
-  "Just getting started",
+  "A few times a week",
+  "Weekly",
+  "Occasionally",
 ];
 
+const CHATTING_OPTIONS = [
+  "I do it myself",
+  "A chatter or VA",
+  "Another agency",
+  "No one yet",
+];
+
+const GOAL_CHIPS = [
+  "Grow subscribers",
+  "Increase income",
+  "Save time",
+  "Go full time",
+  "Better content systems",
+  "Marketing and traffic",
+  "Chatting and sales",
+  "Brand building",
+];
+
+const COMMITMENT_OPTIONS = ["Full time", "Part time", "Side income for now"];
+
+const HOURS_OPTIONS = ["Under 5", "5 to 15", "15 to 30", "30 or more"];
+
+const AVAILABILITY_OPTIONS = ["This week", "Next week", "Flexible"];
+
+const NICHE_CHIPS = [
+  "Fitness",
+  "Lifestyle",
+  "Cosplay",
+  "Glamour",
+  "Alternative",
+  "Couples",
+  "Solo",
+  "Custom content",
+  "Other",
+];
+
+/* ------------------------------------------------------------------ */
+/*  Types                                                              */
+/* ------------------------------------------------------------------ */
+
 type FormData = {
-  name: string;
+  /* Step 1 */
+  creatorName: string;
   email: string;
-  platforms: string;
+  contactMethod: string;
+  contactHandle: string;
+  ageConfirm: boolean;
+  /* Step 2 */
+  onOnlyFans: string;
+  onlyFansUrl: string;
+  otherPlatforms: string[];
+  instagramHandle: string;
+  instagramFollowers: string;
+  tiktokHandle: string;
+  tiktokFollowers: string;
+  twitterHandle: string;
+  twitterFollowers: string;
+  redditUsername: string;
+  redditAdultSubs: string;
+  otherSocials: string;
+  /* Step 3 */
+  experience: string;
   subscriberCount: string;
-  revenueRange: string;
-  niche: string;
+  earnings: string;
+  niche: string[];
   postingCadence: string;
-  socialHandles: string;
-  goals: string;
+  chattingSetup: string;
+  /* Step 4 */
+  goals: string[];
+  biggestChallenge: string;
+  commitment: string;
+  hoursPerWeek: string;
+  priorAgency: string;
+  priorAgencyDetail: string;
+  /* Step 5 */
   whySinnyr: string;
+  ownsAccounts: string;
+  readyForSystem: string;
+  callAvailability: string;
+  invitationAck: boolean;
+  privacyConsent: boolean;
 };
+
+const INITIAL: FormData = {
+  creatorName: "",
+  email: "",
+  contactMethod: "",
+  contactHandle: "",
+  ageConfirm: false,
+  onOnlyFans: "",
+  onlyFansUrl: "",
+  otherPlatforms: [],
+  instagramHandle: "",
+  instagramFollowers: "",
+  tiktokHandle: "",
+  tiktokFollowers: "",
+  twitterHandle: "",
+  twitterFollowers: "",
+  redditUsername: "",
+  redditAdultSubs: "",
+  otherSocials: "",
+  experience: "",
+  subscriberCount: "",
+  earnings: "",
+  niche: [],
+  postingCadence: "",
+  chattingSetup: "",
+  goals: [],
+  biggestChallenge: "",
+  commitment: "",
+  hoursPerWeek: "",
+  priorAgency: "",
+  priorAgencyDetail: "",
+  whySinnyr: "",
+  ownsAccounts: "",
+  readyForSystem: "",
+  callAvailability: "",
+  invitationAck: false,
+  privacyConsent: false,
+};
+
+/* ------------------------------------------------------------------ */
+/*  Shared input styles                                                */
+/* ------------------------------------------------------------------ */
+
+const INPUT =
+  "mt-2 w-full border border-white/20 bg-transparent px-4 py-3 text-cream outline-none transition-colors focus:border-red placeholder:text-cream/25";
+const LABEL = "block text-sm text-cream/60";
+const LABEL_REQ = "block text-sm text-cream/60 after:ml-0.5 after:content-['*'] after:text-red";
+const SELECT =
+  "mt-2 w-full appearance-none border border-white/20 bg-transparent px-4 py-3 text-cream outline-none transition-colors focus:border-red";
+
+/* ------------------------------------------------------------------ */
+/*  Helpers                                                            */
+/* ------------------------------------------------------------------ */
+
+function isValidEmail(v: string) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+}
+
+function isValidUrl(v: string) {
+  try {
+    const url = new URL(v);
+    return url.protocol === "https:" || url.protocol === "http:";
+  } catch {
+    return false;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/*  Reusable field components                                          */
+/* ------------------------------------------------------------------ */
+
+function SelectField({
+  label,
+  value,
+  options,
+  onChange,
+  required,
+}: {
+  label: string;
+  value: string;
+  options: string[];
+  onChange: (v: string) => void;
+  required?: boolean;
+}) {
+  return (
+    <div>
+      <label className={required ? LABEL_REQ : LABEL}>{label}</label>
+      <select
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        className={SELECT}
+      >
+        <option value="" className="bg-ink">
+          Select
+        </option>
+        {options.map((o) => (
+          <option key={o} value={o} className="bg-ink">
+            {o}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
+}
+
+function ChipGroup({
+  label,
+  options,
+  selected,
+  onChange,
+}: {
+  label: string;
+  options: string[];
+  selected: string[];
+  onChange: (v: string[]) => void;
+}) {
+  const toggle = (v: string) =>
+    onChange(
+      selected.includes(v) ? selected.filter((x) => x !== v) : [...selected, v]
+    );
+  return (
+    <div>
+      <span className={LABEL}>{label}</span>
+      <div className="mt-3 flex flex-wrap gap-2">
+        {options.map((o) => {
+          const on = selected.includes(o);
+          return (
+            <button
+              key={o}
+              type="button"
+              onClick={() => toggle(o)}
+              className={`min-h-[44px] border px-4 py-2 text-sm transition-colors ${
+                on
+                  ? "border-red bg-red text-white"
+                  : "border-white/20 text-cream/60 hover:border-cream/40"
+              }`}
+            >
+              {o}
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function SocialRow({
+  platform,
+  handle,
+  followers,
+  onHandle,
+  onFollowers,
+  placeholder,
+}: {
+  platform: string;
+  handle: string;
+  followers: string;
+  onHandle: (v: string) => void;
+  onFollowers: (v: string) => void;
+  placeholder: string;
+}) {
+  return (
+    <div>
+      <span className={LABEL}>{platform}</span>
+      <div className="mt-2 flex flex-col gap-2 sm:flex-row">
+        <input
+          type="text"
+          value={handle}
+          onChange={(e) => onHandle(e.target.value)}
+          placeholder={placeholder}
+          className={`flex-1 border border-white/20 bg-transparent px-4 py-3 text-cream outline-none transition-colors focus:border-red placeholder:text-cream/25`}
+        />
+        <select
+          value={followers}
+          onChange={(e) => onFollowers(e.target.value)}
+          className="min-h-[44px] appearance-none border border-white/20 bg-transparent px-4 py-3 text-cream outline-none transition-colors focus:border-red sm:w-44"
+        >
+          <option value="" className="bg-ink">
+            Followers
+          </option>
+          {FOLLOWER_RANGES.map((r) => (
+            <option key={r} value={r} className="bg-ink">
+              {r}
+            </option>
+          ))}
+        </select>
+      </div>
+    </div>
+  );
+}
+
+function Checkbox({
+  checked,
+  onChange,
+  children,
+}: {
+  checked: boolean;
+  onChange: (v: boolean) => void;
+  children: React.ReactNode;
+}) {
+  return (
+    <label className="flex cursor-pointer items-start gap-3">
+      <input
+        type="checkbox"
+        checked={checked}
+        onChange={(e) => onChange(e.target.checked)}
+        className="mt-1 h-5 w-5 min-w-[20px] accent-red"
+      />
+      <span className="text-sm leading-relaxed text-cream/70">{children}</span>
+    </label>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  Page                                                               */
+/* ------------------------------------------------------------------ */
 
 export default function ApplyPage() {
   const [step, setStep] = useState(0);
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
   const [errorMsg, setErrorMsg] = useState("");
-  const [form, setForm] = useState<FormData>({
-    name: "",
-    email: "",
-    platforms: "",
-    subscriberCount: "",
-    revenueRange: "",
-    niche: "",
-    postingCadence: "",
-    socialHandles: "",
-    goals: "",
-    whySinnyr: "",
-  });
+  const [form, setForm] = useState<FormData>(INITIAL);
 
-  const update = (field: keyof FormData, value: string) =>
-    setForm((prev) => ({ ...prev, [field]: value }));
+  /* Field updaters */
+  const set = <K extends keyof FormData>(k: K, v: FormData[K]) =>
+    setForm((prev) => ({ ...prev, [k]: v }));
 
-  const canAdvance = () => {
-    if (step === 0) return form.name.trim() !== "" && form.email.trim() !== "";
-    return true;
+  /* Validation per step */
+  const canAdvance = (): boolean => {
+    switch (step) {
+      case 0:
+        return (
+          form.creatorName.trim() !== "" &&
+          isValidEmail(form.email) &&
+          form.ageConfirm
+        );
+      case 1:
+        if (form.onOnlyFans === "Yes" && !isValidUrl(form.onlyFansUrl))
+          return false;
+        return true;
+      case 2:
+        return true;
+      case 3:
+        return true;
+      case 4:
+        return (
+          form.whySinnyr.trim() !== "" &&
+          form.invitationAck &&
+          form.privacyConsent
+        );
+      default:
+        return true;
+    }
   };
 
   const next = () => {
-    if (step < STEPS.length - 1) setStep(step + 1);
+    if (step < STEP_LABELS.length - 1 && canAdvance()) setStep(step + 1);
   };
   const prev = () => {
     if (step > 0) setStep(step - 1);
   };
 
   const submit = async () => {
+    if (!canAdvance()) return;
     setStatus("loading");
     setErrorMsg("");
     try {
@@ -100,23 +440,38 @@ export default function ApplyPage() {
     } catch (err: unknown) {
       setStatus("error");
       setErrorMsg(
-        err instanceof Error ? err.message : "Something went wrong. Please try again."
+        err instanceof Error
+          ? err.message
+          : "Something went wrong. Please try again."
       );
     }
   };
 
+  /* ---- Success screen ---- */
   if (status === "success") {
     return (
       <>
+        <BreadcrumbSchema
+          items={[
+            { name: "Home", href: "/" },
+            { name: "Apply", href: "/apply" },
+          ]}
+        />
         <Header />
         <main className="flex min-h-screen flex-col items-center justify-center bg-ink px-6 text-center">
-          <h1 className="text-4xl font-extrabold tracking-tight text-cream sm:text-5xl">
-            Application received.
+          <p className="text-xs font-medium uppercase tracking-[0.3em] text-red">
+            Application received
+          </p>
+          <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-cream sm:text-5xl">
+            Thank you.
           </h1>
-          <p className="mx-auto mt-6 max-w-lg text-lg text-cream/60">
-            We review every application personally. If there is a fit, we will
-            reach out to discuss next steps. This is an application, not a
-            signup. Sinnyr creates accounts by invitation only.
+          <p className="mx-auto mt-6 max-w-lg text-lg leading-relaxed text-cream/60">
+            Every application is reviewed personally by the Sinnyr team. If
+            there is a fit, we will reach out to set up a short intro call.
+          </p>
+          <p className="mx-auto mt-4 max-w-md text-sm text-cream/40">
+            This is an evaluation, not a signup. Sinnyr creates accounts by
+            invitation only.
           </p>
         </main>
         <Footer />
@@ -124,11 +479,21 @@ export default function ApplyPage() {
     );
   }
 
+  /* ---- Progress fraction ---- */
+  const progress = ((step + 1) / STEP_LABELS.length) * 100;
+
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Apply", href: "/apply" },
+        ]}
+      />
       <Header />
       <main className="min-h-screen bg-ink px-6 pt-32 pb-20 md:pt-40 lg:px-8">
         <div className="mx-auto max-w-2xl">
+          {/* Header */}
           <div className="text-center">
             <p className="text-xs font-medium uppercase tracking-[0.3em] text-muted">
               Application
@@ -136,243 +501,398 @@ export default function ApplyPage() {
             <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-cream sm:text-5xl">
               Apply to Sinnyr
             </h1>
-            <p className="mt-4 max-w-lg mx-auto text-cream/50">
-              This is an application, not a signup. Sinnyr selects creators and
-              creates accounts by invitation only. We run a capped roster. Most
-              applicants are not a fit. Applying starts a conversation and an
-              evaluation, not an enrollment.
+            <p className="mx-auto mt-4 max-w-lg text-cream/50">
+              Sinnyr represents a limited number of creators and reviews every
+              application personally. This form is an evaluation, not an
+              enrollment. Take your time with it.
             </p>
           </div>
 
           {/* Progress indicator */}
-          <div className="mt-12 flex items-center justify-between">
-            {STEPS.map((s, i) => (
-              <div key={s.label} className="flex items-center">
-                <div
-                  className={`flex h-8 w-8 items-center justify-center text-sm ${
-                    i <= step
-                      ? "bg-red text-white"
-                      : "bg-white/10 text-cream/40"
-                  }`}
-                >
-                  {i + 1}
-                </div>
-                <span
-                  className={`ml-2 hidden text-xs uppercase tracking-widest sm:inline ${
-                    i <= step ? "text-cream/70" : "text-cream/30"
-                  }`}
-                >
-                  {s.label}
-                </span>
-                {i < STEPS.length - 1 && (
-                  <div
-                    className={`mx-2 h-px w-6 sm:w-10 md:w-16 ${
-                      i < step ? "bg-red" : "bg-white/10"
-                    }`}
-                  />
-                )}
-              </div>
-            ))}
+          <div className="mt-12">
+            <div className="flex items-center justify-between text-sm">
+              <span className="font-medium text-cream/70">
+                Step {step + 1} of {STEP_LABELS.length}
+              </span>
+              <span className="text-xs uppercase tracking-widest text-cream/40">
+                {STEP_LABELS[step]}
+              </span>
+            </div>
+            <div className="mt-3 h-1 w-full overflow-hidden bg-white/10">
+              <div
+                className="h-full bg-red transition-all duration-300"
+                style={{ width: `${progress}%` }}
+              />
+            </div>
           </div>
 
           {/* Form steps */}
           <div className="mt-12">
+            {/* ---- STEP 1: Start Here ---- */}
             {step === 0 && (
               <div className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm text-cream/60">
-                    Full name *
+                  <label htmlFor="creatorName" className={LABEL_REQ}>
+                    Creator or stage name
                   </label>
                   <input
-                    id="name"
+                    id="creatorName"
                     type="text"
-                    value={form.name}
-                    onChange={(e) => update("name", e.target.value)}
-                    className="mt-2 w-full border border-white/20 bg-transparent px-4 py-3 text-cream outline-none focus:border-red"
-                    required
+                    value={form.creatorName}
+                    onChange={(e) => set("creatorName", e.target.value)}
+                    className={INPUT}
                   />
                 </div>
+
                 <div>
-                  <label htmlFor="email" className="block text-sm text-cream/60">
-                    Email address *
+                  <label htmlFor="email" className={LABEL_REQ}>
+                    Email address
                   </label>
                   <input
                     id="email"
                     type="email"
                     value={form.email}
-                    onChange={(e) => update("email", e.target.value)}
-                    className="mt-2 w-full border border-white/20 bg-transparent px-4 py-3 text-cream outline-none focus:border-red"
-                    required
+                    onChange={(e) => set("email", e.target.value)}
+                    className={INPUT}
                   />
+                  {form.email.length > 0 && !isValidEmail(form.email) && (
+                    <p className="mt-1 text-xs text-red">
+                      Please enter a valid email address.
+                    </p>
+                  )}
+                </div>
+
+                <SelectField
+                  label="Best way to reach you"
+                  value={form.contactMethod}
+                  options={CONTACT_METHODS}
+                  onChange={(v) => set("contactMethod", v)}
+                />
+
+                {form.contactMethod &&
+                  form.contactMethod !== "Email" && (
+                    <div>
+                      <label htmlFor="contactHandle" className={LABEL}>
+                        Your{" "}
+                        {form.contactMethod === "Text message"
+                          ? "phone number"
+                          : `${form.contactMethod} handle`}
+                      </label>
+                      <input
+                        id="contactHandle"
+                        type="text"
+                        value={form.contactHandle}
+                        onChange={(e) => set("contactHandle", e.target.value)}
+                        className={INPUT}
+                      />
+                    </div>
+                  )}
+
+                <div className="pt-2">
+                  <Checkbox
+                    checked={form.ageConfirm}
+                    onChange={(v) => set("ageConfirm", v)}
+                  >
+                    I confirm I am 18 years of age or older.
+                  </Checkbox>
                 </div>
               </div>
             )}
 
+            {/* ---- STEP 2: Your Platforms ---- */}
             {step === 1 && (
               <div className="space-y-6">
+                <SelectField
+                  label="Are you currently on OnlyFans?"
+                  value={form.onOnlyFans}
+                  options={["Yes", "Not yet"]}
+                  onChange={(v) => set("onOnlyFans", v)}
+                />
+
+                {form.onOnlyFans === "Yes" && (
+                  <div>
+                    <label htmlFor="onlyFansUrl" className={LABEL_REQ}>
+                      OnlyFans profile URL
+                    </label>
+                    <input
+                      id="onlyFansUrl"
+                      type="url"
+                      value={form.onlyFansUrl}
+                      onChange={(e) => set("onlyFansUrl", e.target.value)}
+                      placeholder="https://onlyfans.com/yourname"
+                      className={INPUT}
+                    />
+                    {form.onlyFansUrl.length > 0 &&
+                      !isValidUrl(form.onlyFansUrl) && (
+                        <p className="mt-1 text-xs text-red">
+                          Please enter a valid URL starting with https://
+                        </p>
+                      )}
+                  </div>
+                )}
+
+                <ChipGroup
+                  label="Other content platforms you use"
+                  options={CONTENT_PLATFORMS}
+                  selected={form.otherPlatforms}
+                  onChange={(v) => set("otherPlatforms", v)}
+                />
+
+                <SocialRow
+                  platform="Instagram"
+                  handle={form.instagramHandle}
+                  followers={form.instagramFollowers}
+                  onHandle={(v) => set("instagramHandle", v)}
+                  onFollowers={(v) => set("instagramFollowers", v)}
+                  placeholder="@handle"
+                />
+
+                <SocialRow
+                  platform="TikTok"
+                  handle={form.tiktokHandle}
+                  followers={form.tiktokFollowers}
+                  onHandle={(v) => set("tiktokHandle", v)}
+                  onFollowers={(v) => set("tiktokFollowers", v)}
+                  placeholder="@handle"
+                />
+
+                <SocialRow
+                  platform="X / Twitter"
+                  handle={form.twitterHandle}
+                  followers={form.twitterFollowers}
+                  onHandle={(v) => set("twitterHandle", v)}
+                  onFollowers={(v) => set("twitterFollowers", v)}
+                  placeholder="@handle"
+                />
+
                 <div>
-                  <label className="block text-sm text-cream/60">
-                    Platforms you are currently active on
-                  </label>
-                  <div className="mt-3 flex flex-wrap gap-2">
-                    {PLATFORM_OPTIONS.map((p) => {
-                      const selected = form.platforms.includes(p);
-                      return (
-                        <button
-                          key={p}
-                          type="button"
-                          onClick={() => {
-                            const current = form.platforms
-                              ? form.platforms.split(", ")
-                              : [];
-                            const next = selected
-                              ? current.filter((x) => x !== p)
-                              : [...current, p];
-                            update("platforms", next.join(", "));
-                          }}
-                          className={`border px-4 py-2 text-sm transition-colors ${
-                            selected
-                              ? "border-red bg-red text-white"
-                              : "border-white/20 text-cream/60 hover:border-cream/40"
-                          }`}
-                        >
-                          {p}
-                        </button>
-                      );
-                    })}
+                  <span className={LABEL}>Reddit</span>
+                  <div className="mt-2 flex flex-col gap-2 sm:flex-row">
+                    <input
+                      type="text"
+                      value={form.redditUsername}
+                      onChange={(e) => set("redditUsername", e.target.value)}
+                      placeholder="u/username"
+                      className="flex-1 border border-white/20 bg-transparent px-4 py-3 text-cream outline-none transition-colors focus:border-red placeholder:text-cream/25"
+                    />
+                    <input
+                      type="text"
+                      value={form.redditAdultSubs}
+                      onChange={(e) => set("redditAdultSubs", e.target.value)}
+                      placeholder="Post to adult subreddits?"
+                      className="flex-1 border border-white/20 bg-transparent px-4 py-3 text-cream outline-none transition-colors focus:border-red placeholder:text-cream/25"
+                    />
                   </div>
                 </div>
+
                 <div>
-                  <label htmlFor="subscriberCount" className="block text-sm text-cream/60">
-                    Current subscriber/follower count (approximate)
+                  <label htmlFor="otherSocials" className={LABEL}>
+                    Any other socials
                   </label>
                   <input
-                    id="subscriberCount"
+                    id="otherSocials"
                     type="text"
-                    value={form.subscriberCount}
-                    onChange={(e) => update("subscriberCount", e.target.value)}
-                    className="mt-2 w-full border border-white/20 bg-transparent px-4 py-3 text-cream outline-none focus:border-red"
-                    placeholder="e.g. 500 subscribers, 10k followers on IG"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm text-cream/60">
-                    Current monthly revenue range
-                  </label>
-                  <div className="mt-3 space-y-2">
-                    {REVENUE_RANGES.map((r) => (
-                      <label
-                        key={r}
-                        className="flex cursor-pointer items-center gap-3"
-                      >
-                        <input
-                          type="radio"
-                          name="revenueRange"
-                          checked={form.revenueRange === r}
-                          onChange={() => update("revenueRange", r)}
-                          className="h-4 w-4 accent-red"
-                        />
-                        <span className="text-sm text-cream/70">{r}</span>
-                      </label>
-                    ))}
-                  </div>
-                </div>
-                <div>
-                  <label htmlFor="niche" className="block text-sm text-cream/60">
-                    Your niche or content focus
-                  </label>
-                  <input
-                    id="niche"
-                    type="text"
-                    value={form.niche}
-                    onChange={(e) => update("niche", e.target.value)}
-                    className="mt-2 w-full border border-white/20 bg-transparent px-4 py-3 text-cream outline-none focus:border-red"
+                    value={form.otherSocials}
+                    onChange={(e) => set("otherSocials", e.target.value)}
+                    className={INPUT}
+                    placeholder="YouTube, Snapchat, etc."
                   />
                 </div>
               </div>
             )}
 
+            {/* ---- STEP 3: Where You Are Now ---- */}
             {step === 2 && (
               <div className="space-y-6">
-                <div>
-                  <label className="block text-sm text-cream/60">
-                    How often do you currently post?
-                  </label>
-                  <div className="mt-3 space-y-2">
-                    {CADENCE_OPTIONS.map((c) => (
-                      <label
-                        key={c}
-                        className="flex cursor-pointer items-center gap-3"
-                      >
-                        <input
-                          type="radio"
-                          name="postingCadence"
-                          checked={form.postingCadence === c}
-                          onChange={() => update("postingCadence", c)}
-                          className="h-4 w-4 accent-red"
-                        />
-                        <span className="text-sm text-cream/70">{c}</span>
-                      </label>
-                    ))}
-                  </div>
-                </div>
-                <div>
-                  <label htmlFor="socialHandles" className="block text-sm text-cream/60">
-                    Social handles and approximate following
-                  </label>
-                  <textarea
-                    id="socialHandles"
-                    value={form.socialHandles}
-                    onChange={(e) => update("socialHandles", e.target.value)}
-                    rows={3}
-                    className="mt-2 w-full border border-white/20 bg-transparent px-4 py-3 text-cream outline-none focus:border-red"
-                    placeholder="e.g. @handle on TikTok (50k), @handle on IG (12k)"
-                  />
-                </div>
+                <SelectField
+                  label="How long have you been creating?"
+                  value={form.experience}
+                  options={EXPERIENCE_OPTIONS}
+                  onChange={(v) => set("experience", v)}
+                />
+
+                <SelectField
+                  label="Current OnlyFans subscribers"
+                  value={form.subscriberCount}
+                  options={SUBSCRIBER_OPTIONS}
+                  onChange={(v) => set("subscriberCount", v)}
+                />
+
+                <SelectField
+                  label="Current monthly earnings (optional, ranges only to assess fit)"
+                  value={form.earnings}
+                  options={EARNINGS_OPTIONS}
+                  onChange={(v) => set("earnings", v)}
+                />
+
+                <ChipGroup
+                  label="Your content niche or style"
+                  options={NICHE_CHIPS}
+                  selected={form.niche}
+                  onChange={(v) => set("niche", v)}
+                />
+
+                <SelectField
+                  label="How often do you post or produce content?"
+                  value={form.postingCadence}
+                  options={CADENCE_OPTIONS}
+                  onChange={(v) => set("postingCadence", v)}
+                />
+
+                <SelectField
+                  label="Who handles your chatting and sales now?"
+                  value={form.chattingSetup}
+                  options={CHATTING_OPTIONS}
+                  onChange={(v) => set("chattingSetup", v)}
+                />
               </div>
             )}
 
+            {/* ---- STEP 4: Your Goals ---- */}
             {step === 3 && (
               <div className="space-y-6">
+                <ChipGroup
+                  label="What do you want from management?"
+                  options={GOAL_CHIPS}
+                  selected={form.goals}
+                  onChange={(v) => set("goals", v)}
+                />
+
                 <div>
-                  <label htmlFor="goals" className="block text-sm text-cream/60">
-                    What are your goals for the next 6 to 12 months?
+                  <label htmlFor="biggestChallenge" className={LABEL}>
+                    Your single biggest challenge right now
                   </label>
                   <textarea
-                    id="goals"
-                    value={form.goals}
-                    onChange={(e) => update("goals", e.target.value)}
-                    rows={4}
-                    className="mt-2 w-full border border-white/20 bg-transparent px-4 py-3 text-cream outline-none focus:border-red"
+                    id="biggestChallenge"
+                    value={form.biggestChallenge}
+                    onChange={(e) => set("biggestChallenge", e.target.value)}
+                    rows={3}
+                    className={INPUT}
                   />
                 </div>
+
+                <SelectField
+                  label="Is this full time or part time for you?"
+                  value={form.commitment}
+                  options={COMMITMENT_OPTIONS}
+                  onChange={(v) => set("commitment", v)}
+                />
+
+                <SelectField
+                  label="Roughly how many hours a week do you put in?"
+                  value={form.hoursPerWeek}
+                  options={HOURS_OPTIONS}
+                  onChange={(v) => set("hoursPerWeek", v)}
+                />
+
+                <SelectField
+                  label="Have you worked with an agency before?"
+                  value={form.priorAgency}
+                  options={["Yes", "No"]}
+                  onChange={(v) => set("priorAgency", v)}
+                />
+
+                {form.priorAgency === "Yes" && (
+                  <div>
+                    <label htmlFor="priorAgencyDetail" className={LABEL}>
+                      What happened, and why did it end?
+                    </label>
+                    <textarea
+                      id="priorAgencyDetail"
+                      value={form.priorAgencyDetail}
+                      onChange={(e) =>
+                        set("priorAgencyDetail", e.target.value)
+                      }
+                      rows={3}
+                      className={INPUT}
+                    />
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* ---- STEP 5: Why Sinnyr ---- */}
+            {step === 4 && (
+              <div className="space-y-6">
                 <div>
-                  <label htmlFor="whySinnyr" className="block text-sm text-cream/60">
-                    Why Sinnyr? What are you looking for in a management agency?
+                  <label htmlFor="whySinnyr" className={LABEL_REQ}>
+                    Why do you want Sinnyr to represent you, and what makes you
+                    serious about this?
                   </label>
                   <textarea
                     id="whySinnyr"
                     value={form.whySinnyr}
-                    onChange={(e) => update("whySinnyr", e.target.value)}
-                    rows={4}
-                    className="mt-2 w-full border border-white/20 bg-transparent px-4 py-3 text-cream outline-none focus:border-red"
+                    onChange={(e) => set("whySinnyr", e.target.value)}
+                    rows={5}
+                    className={INPUT}
                   />
+                </div>
+
+                <SelectField
+                  label="Do you solely own and control your accounts?"
+                  value={form.ownsAccounts}
+                  options={["Yes", "No"]}
+                  onChange={(v) => set("ownsAccounts", v)}
+                />
+
+                <SelectField
+                  label="Are you ready to follow a structured system?"
+                  value={form.readyForSystem}
+                  options={["Yes", "No"]}
+                  onChange={(v) => set("readyForSystem", v)}
+                />
+
+                <SelectField
+                  label="Availability for a short intro call"
+                  value={form.callAvailability}
+                  options={AVAILABILITY_OPTIONS}
+                  onChange={(v) => set("callAvailability", v)}
+                />
+
+                <div className="space-y-4 pt-2">
+                  <Checkbox
+                    checked={form.invitationAck}
+                    onChange={(v) => set("invitationAck", v)}
+                  >
+                    I understand that applying is an evaluation, not a signup,
+                    and that Sinnyr creates accounts by invitation only.
+                  </Checkbox>
+                  <Checkbox
+                    checked={form.privacyConsent}
+                    onChange={(v) => set("privacyConsent", v)}
+                  >
+                    I agree to the{" "}
+                    <a
+                      href="/legal/privacy"
+                      className="underline hover:text-cream"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      privacy policy
+                    </a>
+                    .
+                  </Checkbox>
                 </div>
               </div>
             )}
 
             {/* Error message */}
             {status === "error" && (
-              <p className="mt-4 text-sm text-red-400">{errorMsg}</p>
+              <div className="mt-6 border border-red/30 bg-red/10 px-4 py-3">
+                <p className="text-sm text-red">{errorMsg}</p>
+                <p className="mt-1 text-xs text-cream/40">
+                  Your data has been preserved. You can try again.
+                </p>
+              </div>
             )}
 
-            {/* Navigation buttons */}
+            {/* Navigation */}
             <div className="mt-10 flex items-center justify-between">
               {step > 0 ? (
                 <button
                   type="button"
                   onClick={prev}
-                  className="text-sm uppercase tracking-widest text-cream/50 transition-colors hover:text-cream"
+                  className="min-h-[44px] text-sm uppercase tracking-widest text-cream/50 transition-colors hover:text-cream"
                 >
                   Back
                 </button>
@@ -380,12 +900,12 @@ export default function ApplyPage() {
                 <div />
               )}
 
-              {step < STEPS.length - 1 ? (
+              {step < STEP_LABELS.length - 1 ? (
                 <button
                   type="button"
                   onClick={next}
                   disabled={!canAdvance()}
-                  className="border border-red bg-red px-8 py-3 text-sm font-medium uppercase tracking-widest text-white transition-colors hover:bg-transparent hover:text-red disabled:opacity-40 disabled:hover:bg-red disabled:hover:text-white"
+                  className="min-h-[44px] border border-red bg-red px-8 py-3 text-sm font-medium uppercase tracking-widest text-white transition-colors hover:bg-transparent hover:text-red disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-red disabled:hover:text-white"
                 >
                   Continue
                 </button>
@@ -393,22 +913,23 @@ export default function ApplyPage() {
                 <button
                   type="button"
                   onClick={submit}
-                  disabled={status === "loading"}
-                  className="border border-red bg-red px-8 py-3 text-sm font-medium uppercase tracking-widest text-white transition-colors hover:bg-transparent hover:text-red disabled:opacity-40"
+                  disabled={!canAdvance() || status === "loading"}
+                  className="min-h-[44px] border border-red bg-red px-8 py-3 text-sm font-medium uppercase tracking-widest text-white transition-colors hover:bg-transparent hover:text-red disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-red disabled:hover:text-white"
                 >
-                  {status === "loading" ? "Submitting..." : "Submit Application"}
+                  {status === "loading"
+                    ? "Submitting..."
+                    : "Submit Application"}
                 </button>
               )}
             </div>
 
-            <p className="mt-8 text-center text-xs text-cream/30">
-              By submitting this application, you agree to our{" "}
-              <a href="/legal/privacy" className="underline hover:text-cream/50">
-                Privacy Policy
-              </a>
-              . Sinnyr creates accounts by invitation only. Applying does not
-              create an account or guarantee representation.
-            </p>
+            {/* Reassurance microcopy */}
+            {step === STEP_LABELS.length - 1 && (
+              <p className="mt-6 text-center text-xs text-cream/30">
+                Applying is an evaluation, not a signup. Sinnyr creates accounts
+                by invitation only.
+              </p>
+            )}
           </div>
         </div>
       </main>

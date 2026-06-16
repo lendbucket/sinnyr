@@ -11,7 +11,7 @@ import { SITE, FEE } from "@/lib/constants";
 import { METHOD_STEPS } from "@/data/method";
 
 export const metadata: Metadata = {
-  title: "Sinnyr | OnlyFans Management Agency",
+  title: { absolute: "Sinnyr | OnlyFans Management Agency" },
   description:
     "Sinnyr is a selective creator management agency. We manage adult content creators as professional talent through a defined system. Apply to be represented.",
 };

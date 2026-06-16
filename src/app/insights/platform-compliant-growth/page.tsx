@@ -3,7 +3,7 @@ import Link from "next/link";
 import ArticleLayout from "@/components/ArticleLayout";
 
 export const metadata: Metadata = {
-  title: "Platform-Compliant Growth on Reddit, X, TikTok, and Instagram",
+  title: "Platform-Compliant Creator Growth Across Social Media",
   description:
     "The line between marketing and getting banned is thin on every platform. Here is how to grow an audience without violating terms of service.",
 };

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { BreadcrumbSchema } from "@/components/SchemaOrg";
 import { SITE } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -11,6 +12,12 @@ export const metadata: Metadata = {
 export default function TermsPage() {
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Terms of Use", href: "/legal/terms" },
+        ]}
+      />
       <Header />
       <main className="bg-cream px-6 pt-32 pb-20 md:pt-40 lg:px-8">
         <article className="prose-custom mx-auto max-w-3xl">

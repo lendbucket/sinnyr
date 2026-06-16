@@ -3,7 +3,7 @@ import Link from "next/link";
 import ArticleLayout from "@/components/ArticleLayout";
 
 export const metadata: Metadata = {
-  title: "Subscriber Retention: the Metric Most Creators Ignore",
+  title: "Subscriber Retention: the Metric Creators Ignore",
   description:
     "Acquiring a subscriber costs time and money. Losing one costs the same, silently. Here is how retention works and why it matters more than growth.",
 };

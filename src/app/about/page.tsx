@@ -9,7 +9,7 @@ import PullQuote from "@/components/PullQuote";
 import { BreadcrumbSchema } from "@/components/SchemaOrg";
 
 export const metadata: Metadata = {
-  title: "About Sinnyr | Creator Management Agency",
+  title: { absolute: "About Sinnyr | Creator Management Agency" },
   description:
     "Why Sinnyr exists, the standard it holds, and why it operates like a professional talent firm. Learn about our approach to creator management.",
 };

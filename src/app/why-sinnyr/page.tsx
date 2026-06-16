@@ -10,7 +10,7 @@ import { BreadcrumbSchema } from "@/components/SchemaOrg";
 import { FEE } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Why Sinnyr | OFM Agency That Operates Differently",
+  title: { absolute: "Why Sinnyr | OFM Agency That Operates Differently" },
   description:
     "Professionalism, structure, selectivity, real onboarding, and aligned fees. Why Sinnyr operates differently from other OnlyFans management agencies.",
 };

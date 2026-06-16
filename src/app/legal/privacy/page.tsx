@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { BreadcrumbSchema } from "@/components/SchemaOrg";
 import { SITE } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -11,6 +12,12 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Privacy Policy", href: "/legal/privacy" },
+        ]}
+      />
       <Header />
       <main className="bg-cream px-6 pt-32 pb-20 md:pt-40 lg:px-8">
         <article className="prose-custom mx-auto max-w-3xl">
@@ -31,10 +38,20 @@ export default function PrivacyPage() {
               </h2>
               <p className="mt-4">
                 When you submit the application form on this site, we collect:
-                your name, email address, platforms you are active on, subscriber
-                and follower counts, revenue range, niche, posting cadence,
-                social media handles, goals, and your reason for applying. All
-                fields beyond name and email are optional.
+                your creator or stage name, email address, preferred contact
+                method and handle, age confirmation, whether you are on
+                OnlyFans (and your profile URL if so), other content platforms
+                you use, social media handles and follower ranges for
+                Instagram, TikTok, X/Twitter, and Reddit, how long you have
+                been creating, current subscriber count, current monthly
+                earnings range, content niche or style, posting frequency,
+                who handles your chatting and sales, what you want from
+                management, your biggest challenge, whether this is full time
+                or part time, hours per week, prior agency experience and
+                details, why you want Sinnyr to represent you, whether you
+                own and control your accounts, your readiness to follow a
+                structured system, and your availability for an intro call.
+                Most fields beyond creator name and email are optional.
               </p>
               <p className="mt-4">
                 We also automatically collect standard technical data when you

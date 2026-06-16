@@ -3,8 +3,7 @@ import Link from "next/link";
 import ArticleLayout from "@/components/ArticleLayout";
 
 export const metadata: Metadata = {
-  title:
-    "Pricing, Pay-Per-View, and the Messaging Work That Drives Real Income",
+  title: "Pricing, PPV, and Messaging Strategy for Creators",
   description:
     "Subscription revenue is the start. The majority of real income comes from PPV, tips, and direct messaging. Here is how that works.",
 };
