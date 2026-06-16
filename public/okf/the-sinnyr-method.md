@@ -21,7 +21,7 @@ The Sinnyr Method is the operating system behind every creator Sinnyr manages. I
 
 4. **Distribution**: An orchestrated, daily posting operation across TikTok, Reddit, X, and Instagram, managed by the Sinnyr team and built to respect each platform's rules.
 
-5. **Conversion**: The free-to-paid funnel, messaging strategy, DM sequences, pricing structure, and offer stack are designed and managed to turn followers into paying subscribers.
+5. **Conversion**: The free-to-paid funnel, messaging strategy, DM sequences, pricing structure, and offer stack are designed and managed to move followers through a structured path toward a paid subscription.
 
 6. **Daily Signal**: Every day, the creator receives a personalized briefing built from live analytics, showing what is working, what needs adjustment, and exactly what to do next.
 

@@ -63,7 +63,7 @@ const STAGES = [
     name: "Growth",
     duration: "Ongoing",
     description:
-      "With the system running, we optimize. The Daily Signal tells us what is working and what needs adjustment. We refine your content mix, your distribution timing, your messaging, your pricing, and your offers based on real data. Growth is not a phase that ends. It is the permanent operating mode of a managed creator.",
+      "With the system running, we optimize. The Daily Signal tells us what is working and what needs adjustment. We refine your content mix, your distribution timing, your messaging, your pricing, and your offers based on real data. Optimization is not a phase that ends. It is the permanent operating mode of a managed creator.",
     deliverables: [
       "Continuous strategy refinement from live analytics",
       "Content and distribution optimization",

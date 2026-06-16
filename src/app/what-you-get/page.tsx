@@ -38,7 +38,7 @@ const SERVICES = [
   {
     name: "Conversion and Messaging Strategy",
     description:
-      "The free-to-paid funnel, DM sequences, pricing structure, and offer stack are designed and managed to turn followers into paying subscribers. We build the strategy and manage the execution.",
+      "The free-to-paid funnel, DM sequences, pricing structure, and offer stack are designed and managed to move followers through a structured path toward a paid subscription. We build the strategy and manage the execution.",
   },
   {
     name: "Daily Signal: Analytics and Action Plan",
@@ -122,9 +122,9 @@ export default function WhatYouGetPage() {
           </p>
           <p className="mt-8 text-lg leading-relaxed text-cream/60">
             No setup fees. No lock-in contracts with hidden penalties. We earn
-            when you earn. The percentage model means our incentive is to grow
-            your income, not to collect a flat fee regardless of whether the work
-            is producing results.
+            when you earn. The percentage model means our incentive is aligned
+            with your earnings, not structured to collect a flat fee regardless
+            of the work being done.
           </p>
         </div>
       </Section>

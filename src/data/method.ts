@@ -30,9 +30,9 @@ export const METHOD_STEPS = [
   {
     number: "05",
     name: "Conversion",
-    short: "Turning followers into paying subscribers.",
+    short: "Managing the free-to-paid funnel.",
     description:
-      "We build and manage the free-to-paid funnel: the messaging strategy, the DM sequences, the pricing structure, and the offer stack that moves a follower from interested to subscribed. This is where audience becomes income.",
+      "We build and manage the free-to-paid funnel: the messaging strategy, the DM sequences, the pricing structure, and the offer stack designed to guide a follower from interest toward a paid subscription. This is the work that connects audience to revenue.",
   },
   {
     number: "06",

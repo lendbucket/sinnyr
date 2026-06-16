@@ -35,7 +35,7 @@ const GAP_FIX = [
     alone:
       "Growing followers but not subscribers, and not understanding where the revenue is leaking.",
     managed:
-      "A conversion funnel with messaging, DM strategy, PPV sequencing, and an offer stack designed to turn attention into income.",
+      "A conversion funnel with messaging, DM strategy, PPV sequencing, and an offer stack built to close the gap between attention and revenue.",
   },
   {
     alone: "No idea what is working, what to change, or what to do tomorrow.",

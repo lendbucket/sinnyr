@@ -2,7 +2,7 @@ export const SITE = {
   name: "Sinnyr",
   url: "https://sinnyrmodels.com",
   description:
-    "Sinnyr is a selective creator management agency. We manage adult content creators as professional talent, growing audience, subscribers, and income through a defined system.",
+    "Sinnyr is a selective creator management agency. We manage adult content creators as professional talent, running the full operation behind audience development, subscriber acquisition, and revenue strategy.",
   contact: {
     email: "hello@sinnyrmodels.com",
     leadEmail: "ceo@36west.org",

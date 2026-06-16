@@ -21,7 +21,7 @@ const OPERATIONS = [
   "Platform-compliant distribution on Reddit, X, TikTok, and Instagram, every single day",
   "Funnel and link-in-bio optimization so traffic actually converts",
   "The relentless chat and pay-per-view sales work where most of the real revenue lives",
-  "Subscriber retention and re-engagement so your audience does not churn",
+  "Subscriber retention and re-engagement campaigns aimed at reducing churn",
   "Analytics, iteration, and strategy shifts based on real data",
   "Keeping up with constant platform rule changes that can wipe your reach overnight",
 ];
@@ -291,8 +291,8 @@ export default function Home() {
             </p>
             <p className="mt-8 text-lg leading-relaxed text-cream/60">
               We earn when you earn. No setup fees, no hidden costs, no lock-in
-              contracts. The percentage model means our only incentive is to grow
-              your business. If we do not do the work, we do not get paid. That
+              contracts. The percentage model means our incentive is fully
+              aligned with yours. If we do not do the work, we do not get paid. That
               is how it should be.
             </p>
           </div>

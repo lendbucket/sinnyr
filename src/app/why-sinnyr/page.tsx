@@ -39,7 +39,7 @@ const FULL_OPERATION = [
   {
     name: "Subscriber retention",
     detail:
-      "Getting subscribers is one problem. Keeping them is another. Re-engagement campaigns, content calendars, exclusivity tiers, and renewal incentives. The churn you do not manage is the income you lose silently.",
+      "Getting subscribers is one problem. Keeping them is another. Re-engagement campaigns, content calendars, exclusivity tiers, and renewal incentives. Retention is a daily operation, and unmanaged churn is the most common silent cost.",
   },
   {
     name: "Analytics and iteration",
@@ -76,7 +76,7 @@ const REASONS = [
   },
   {
     heading: "Honest about what we do and do not promise.",
-    body: "We do not publish invented growth numbers, fabricated testimonials, or guaranteed income figures. Every creator's situation is different, and honest management means being clear about that. What we promise is the work: a defined system, a professional team, daily operations, and full transparency about what we are doing on your behalf. The work speaks. The numbers follow the work.",
+    body: "We do not publish invented growth numbers, fabricated testimonials, or guaranteed income figures. Every creator's situation is different, and honest management means being clear about that. What we promise is the work: a defined system, a professional team, daily operations, and full transparency about what we are doing on your behalf. The work speaks for itself.",
   },
 ];
 
